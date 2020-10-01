@@ -1,0 +1,1564 @@
+comment 注释
+-----------   二进制bomb的反汇编文件(gdb)  --------------
+
+注释
+
+
+Dump of assembler code from 0x400ac0 to 0x4022ac:
+   0x0000000000400ac0 <_init+0>:	sub    $0x8,%rsp
+   0x0000000000400ac4 <_init+4>:	callq  0x400cbc <call_gmon_start>
+   0x0000000000400ac9 <_init+9>:	add    $0x8,%rsp
+   0x0000000000400acd <_init+13>:	retq   
+   0x0000000000400ace:	add    %al,(%rax)
+   0x0000000000400ad0:	pushq  0x20251a(%rip)        # 0x602ff0
+   0x0000000000400ad6:	jmpq   *0x20251c(%rip)        # 0x602ff8
+   0x0000000000400adc:	nopl   0x0(%rax)
+   0x0000000000400ae0 <getenv@plt+0>:	jmpq   *0x20251a(%rip)        # 0x603000 <getenv@got.plt>
+   0x0000000000400ae6 <getenv@plt+6>:	pushq  $0x0
+   0x0000000000400aeb <getenv@plt+11>:	jmpq   0x400ad0
+   0x0000000000400af0 <__errno_location@plt+0>:	jmpq   *0x202512(%rip)        # 0x603008 <__errno_location@got.plt>
+   0x0000000000400af6 <__errno_location@plt+6>:	pushq  $0x1
+   0x0000000000400afb <__errno_location@plt+11>:	jmpq   0x400ad0
+   0x0000000000400b00 <strcpy@plt+0>:	jmpq   *0x20250a(%rip)        # 0x603010 <strcpy@got.plt>
+   0x0000000000400b06 <strcpy@plt+6>:	pushq  $0x2
+   0x0000000000400b0b <strcpy@plt+11>:	jmpq   0x400ad0
+   0x0000000000400b10 <puts@plt+0>:	jmpq   *0x202502(%rip)        # 0x603018 <puts@got.plt>
+   0x0000000000400b16 <puts@plt+6>:	pushq  $0x3
+   0x0000000000400b1b <puts@plt+11>:	jmpq   0x400ad0
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000400b20 <write@plt+0>:	jmpq   *0x2024fa(%rip)        # 0x603020 <write@got.plt>
+   0x0000000000400b26 <write@plt+6>:	pushq  $0x4
+   0x0000000000400b2b <write@plt+11>:	jmpq   0x400ad0
+   0x0000000000400b30 <__stack_chk_fail@plt+0>:	jmpq   *0x2024f2(%rip)        # 0x603028 <__stack_chk_fail@got.plt>
+   0x0000000000400b36 <__stack_chk_fail@plt+6>:	pushq  $0x5
+   0x0000000000400b3b <__stack_chk_fail@plt+11>:	jmpq   0x400ad0
+   0x0000000000400b40 <alarm@plt+0>:	jmpq   *0x2024ea(%rip)        # 0x603030 <alarm@got.plt>
+   0x0000000000400b46 <alarm@plt+6>:	pushq  $0x6
+   0x0000000000400b4b <alarm@plt+11>:	jmpq   0x400ad0
+   0x0000000000400b50 <close@plt+0>:	jmpq   *0x2024e2(%rip)        # 0x603038 <close@got.plt>
+   0x0000000000400b56 <close@plt+6>:	pushq  $0x7
+   0x0000000000400b5b <close@plt+11>:	jmpq   0x400ad0
+   0x0000000000400b60 <read@plt+0>:	jmpq   *0x2024da(%rip)        # 0x603040 <read@got.plt>
+   0x0000000000400b66 <read@plt+6>:	pushq  $0x8
+   0x0000000000400b6b <read@plt+11>:	jmpq   0x400ad0
+   0x0000000000400b70 <__libc_start_main@plt+0>:	jmpq   *0x2024d2(%rip)        # 0x603048 <__libc_start_main@got.plt>
+   0x0000000000400b76 <__libc_start_main@plt+6>:	pushq  $0x9
+   0x0000000000400b7b <__libc_start_main@plt+11>:	jmpq   0x400ad0
+   0x0000000000400b80 <fgets@plt+0>:	jmpq   *0x2024ca(%rip)        # 0x603050 <fgets@got.pl---Type <return> to continue, or q <return> to quit---
+t>
+   0x0000000000400b86 <fgets@plt+6>:	pushq  $0xa
+   0x0000000000400b8b <fgets@plt+11>:	jmpq   0x400ad0
+   0x0000000000400b90 <signal@plt+0>:	jmpq   *0x2024c2(%rip)        # 0x603058 <signal@got.plt>
+   0x0000000000400b96 <signal@plt+6>:	pushq  $0xb
+   0x0000000000400b9b <signal@plt+11>:	jmpq   0x400ad0
+   0x0000000000400ba0 <gethostbyname@plt+0>:	jmpq   *0x2024ba(%rip)        # 0x603060 <gethostbyname@got.plt>
+   0x0000000000400ba6 <gethostbyname@plt+6>:	pushq  $0xc
+   0x0000000000400bab <gethostbyname@plt+11>:	jmpq   0x400ad0
+   0x0000000000400bb0 <__memmove_chk@plt+0>:	jmpq   *0x2024b2(%rip)        # 0x603068 <__memmove_chk@got.plt>
+   0x0000000000400bb6 <__memmove_chk@plt+6>:	pushq  $0xd
+   0x0000000000400bbb <__memmove_chk@plt+11>:	jmpq   0x400ad0
+   0x0000000000400bc0 <__memcpy_chk@plt+0>:	jmpq   *0x2024aa(%rip)        # 0x603070 <__memcpy_chk@got.plt>
+   0x0000000000400bc6 <__memcpy_chk@plt+6>:	pushq  $0xe
+   0x0000000000400bcb <__memcpy_chk@plt+11>:	jmpq   0x400ad0
+   0x0000000000400bd0 <strtol@plt+0>:	jmpq   *0x2024a2(%rip)        # 0x603078 <strtol@got.plt>
+   0x0000000000400bd6 <strtol@plt+6>:	pushq  $0xf
+   0x0000000000400bdb <strtol@plt+11>:	jmpq   0x400ad0
+   0x0000000000400be0 <fflush@plt+0>:	jmpq   *0x20249a(%rip)        # 0x603080 <fflush@got.plt>
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000400be6 <fflush@plt+6>:	pushq  $0x10
+   0x0000000000400beb <fflush@plt+11>:	jmpq   0x400ad0
+   0x0000000000400bf0 <__isoc99_sscanf@plt+0>:	jmpq   *0x202492(%rip)        # 0x603088 <__isoc99_sscanf@got.plt>
+   0x0000000000400bf6 <__isoc99_sscanf@plt+6>:	pushq  $0x11
+   0x0000000000400bfb <__isoc99_sscanf@plt+11>:	jmpq   0x400ad0
+   0x0000000000400c00 <__printf_chk@plt+0>:	jmpq   *0x20248a(%rip)        # 0x603090 <__printf_chk@got.plt>
+   0x0000000000400c06 <__printf_chk@plt+6>:	pushq  $0x12
+   0x0000000000400c0b <__printf_chk@plt+11>:	jmpq   0x400ad0
+   0x0000000000400c10 <fopen@plt+0>:	jmpq   *0x202482(%rip)        # 0x603098 <fopen@got.plt>
+   0x0000000000400c16 <fopen@plt+6>:	pushq  $0x13
+   0x0000000000400c1b <fopen@plt+11>:	jmpq   0x400ad0
+   0x0000000000400c20 <exit@plt+0>:	jmpq   *0x20247a(%rip)        # 0x6030a0 <exit@got.plt>
+   0x0000000000400c26 <exit@plt+6>:	pushq  $0x14
+   0x0000000000400c2b <exit@plt+11>:	jmpq   0x400ad0
+   0x0000000000400c30 <connect@plt+0>:	jmpq   *0x202472(%rip)        # 0x6030a8 <connect@got.plt>
+   0x0000000000400c36 <connect@plt+6>:	pushq  $0x15
+   0x0000000000400c3b <connect@plt+11>:	jmpq   0x400ad0
+   0x0000000000400c40 <__fprintf_chk@plt+0>:	jmpq   *0x20246a(%rip)        # 0x6030b0 <__fprintf_chk@got.plt>
+   0x0000000000400c46 <__fprintf_chk@plt+6>:	pushq  $0x16
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000400c4b <__fprintf_chk@plt+11>:	jmpq   0x400ad0
+   0x0000000000400c50 <sleep@plt+0>:	jmpq   *0x202462(%rip)        # 0x6030b8 <sleep@got.plt>
+   0x0000000000400c56 <sleep@plt+6>:	pushq  $0x17
+   0x0000000000400c5b <sleep@plt+11>:	jmpq   0x400ad0
+   0x0000000000400c60 <__ctype_b_loc@plt+0>:	jmpq   *0x20245a(%rip)        # 0x6030c0 <__ctype_b_loc@got.plt>
+   0x0000000000400c66 <__ctype_b_loc@plt+6>:	pushq  $0x18
+   0x0000000000400c6b <__ctype_b_loc@plt+11>:	jmpq   0x400ad0
+   0x0000000000400c70 <__sprintf_chk@plt+0>:	jmpq   *0x202452(%rip)        # 0x6030c8 <__sprintf_chk@got.plt>
+   0x0000000000400c76 <__sprintf_chk@plt+6>:	pushq  $0x19
+   0x0000000000400c7b <__sprintf_chk@plt+11>:	jmpq   0x400ad0
+   0x0000000000400c80 <socket@plt+0>:	jmpq   *0x20244a(%rip)        # 0x6030d0 <socket@got.plt>
+   0x0000000000400c86 <socket@plt+6>:	pushq  $0x1a
+   0x0000000000400c8b <socket@plt+11>:	jmpq   0x400ad0
+   0x0000000000400c90 <_start+0>:	xor    %ebp,%ebp
+   0x0000000000400c92 <_start+2>:	mov    %rdx,%r9
+   0x0000000000400c95 <_start+5>:	pop    %rsi
+   0x0000000000400c96 <_start+6>:	mov    %rsp,%rdx
+   0x0000000000400c99 <_start+9>:	and    $0xfffffffffffffff0,%rsp
+   0x0000000000400c9d <_start+13>:	push   %rax
+   0x0000000000400c9e <_start+14>:	push   %rsp
+   0x0000000000400c9f <_start+15>:	mov    $0x4022a0,%r8
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000400ca6 <_start+22>:	mov    $0x402210,%rcx
+   0x0000000000400cad <_start+29>:	mov    $0x400da0,%rdi
+   0x0000000000400cb4 <_start+36>:	callq  0x400b70 <__libc_start_main@plt>
+   0x0000000000400cb9 <_start+41>:	hlt    
+   0x0000000000400cba <_start+42>:	nop
+   0x0000000000400cbb <_start+43>:	nop
+   0x0000000000400cbc <call_gmon_start+0>:	sub    $0x8,%rsp
+   0x0000000000400cc0 <call_gmon_start+4>:	mov    0x202319(%rip),%rax        # 0x602fe0
+   0x0000000000400cc7 <call_gmon_start+11>:	test   %rax,%rax
+   0x0000000000400cca <call_gmon_start+14>:	je     0x400cce <call_gmon_start+18>
+   0x0000000000400ccc <call_gmon_start+16>:	callq  *%rax
+   0x0000000000400cce <call_gmon_start+18>:	add    $0x8,%rsp
+   0x0000000000400cd2 <call_gmon_start+22>:	retq   
+   0x0000000000400cd3 <call_gmon_start+23>:	nop
+   0x0000000000400cd4 <call_gmon_start+24>:	nop
+   0x0000000000400cd5 <call_gmon_start+25>:	nop
+   0x0000000000400cd6 <call_gmon_start+26>:	nop
+   0x0000000000400cd7 <call_gmon_start+27>:	nop
+   0x0000000000400cd8 <call_gmon_start+28>:	nop
+   0x0000000000400cd9 <call_gmon_start+29>:	nop
+   0x0000000000400cda <call_gmon_start+30>:	nop
+   0x0000000000400cdb <call_gmon_start+31>:	nop
+   0x0000000000400cdc <call_gmon_start+32>:	nop
+   0x0000000000400cdd <call_gmon_start+33>:	nop
+   0x0000000000400cde <call_gmon_start+34>:	nop
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000400cdf <call_gmon_start+35>:	nop
+   0x0000000000400ce0 <deregister_tm_clones+0>:	mov    $0x603747,%eax
+   0x0000000000400ce5 <deregister_tm_clones+5>:	push   %rbp
+   0x0000000000400ce6 <deregister_tm_clones+6>:	sub    $0x603740,%rax
+   0x0000000000400cec <deregister_tm_clones+12>:	cmp    $0xe,%rax
+   0x0000000000400cf0 <deregister_tm_clones+16>:	mov    %rsp,%rbp
+   0x0000000000400cf3 <deregister_tm_clones+19>:	ja     0x400cf7 <deregister_tm_clones+23>
+   0x0000000000400cf5 <deregister_tm_clones+21>:	pop    %rbp
+   0x0000000000400cf6 <deregister_tm_clones+22>:	retq   
+   0x0000000000400cf7 <deregister_tm_clones+23>:	mov    $0x0,%eax
+   0x0000000000400cfc <deregister_tm_clones+28>:	test   %rax,%rax
+   0x0000000000400cff <deregister_tm_clones+31>:	je     0x400cf5 <deregister_tm_clones+21>
+   0x0000000000400d01 <deregister_tm_clones+33>:	pop    %rbp
+   0x0000000000400d02 <deregister_tm_clones+34>:	mov    $0x603740,%edi
+   0x0000000000400d07 <deregister_tm_clones+39>:	jmpq   *%rax
+   0x0000000000400d09 <deregister_tm_clones+41>:	nopl   0x0(%rax)
+   0x0000000000400d10 <register_tm_clones+0>:	mov    $0x603740,%eax
+   0x0000000000400d15 <register_tm_clones+5>:	push   %rbp
+   0x0000000000400d16 <register_tm_clones+6>:	sub    $0x603740,%rax
+   0x0000000000400d1c <register_tm_clones+12>:	sar    $0x3,%rax
+   0x0000000000400d20 <register_tm_clones+16>:	mov    %rsp,%rbp
+   0x0000000000400d23 <register_tm_clones+19>:	mov    %rax,%rdx
+   0x0000000000400d26 <register_tm_clones+22>:	shr    $0x3f,%rdx
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000400d2a <register_tm_clones+26>:	add    %rdx,%rax
+   0x0000000000400d2d <register_tm_clones+29>:	sar    %rax
+   0x0000000000400d30 <register_tm_clones+32>:	jne    0x400d34 <register_tm_clones+36>
+   0x0000000000400d32 <register_tm_clones+34>:	pop    %rbp
+   0x0000000000400d33 <register_tm_clones+35>:	retq   
+   0x0000000000400d34 <register_tm_clones+36>:	mov    $0x0,%edx
+   0x0000000000400d39 <register_tm_clones+41>:	test   %rdx,%rdx
+   0x0000000000400d3c <register_tm_clones+44>:	je     0x400d32 <register_tm_clones+34>
+   0x0000000000400d3e <register_tm_clones+46>:	pop    %rbp
+   0x0000000000400d3f <register_tm_clones+47>:	mov    %rax,%rsi
+   0x0000000000400d42 <register_tm_clones+50>:	mov    $0x603740,%edi
+   0x0000000000400d47 <register_tm_clones+55>:	jmpq   *%rdx
+   0x0000000000400d49 <register_tm_clones+57>:	nopl   0x0(%rax)
+   0x0000000000400d50 <__do_global_dtors_aux+0>:	cmpb   $0x0,0x202a01(%rip)        # 0x603758 <completed.6976>
+   0x0000000000400d57 <__do_global_dtors_aux+7>:	jne    0x400d6a <__do_global_dtors_aux+26>
+   0x0000000000400d59 <__do_global_dtors_aux+9>:	push   %rbp
+   0x0000000000400d5a <__do_global_dtors_aux+10>:	mov    %rsp,%rbp
+   0x0000000000400d5d <__do_global_dtors_aux+13>:	callq  0x400ce0 <deregister_tm_clones>
+   0x0000000000400d62 <__do_global_dtors_aux+18>:	pop    %rbp
+   0x0000000000400d63 <__do_global_dtors_aux+19>:	movb   $0x1,0x2029ee(%rip)        # 0x603758 <completed.6976>
+   0x0000000000400d6a <__do_global_dtors_aux+26>:	repz retq 
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000400d6c <__do_global_dtors_aux+28>:	nopl   0x0(%rax)
+   0x0000000000400d70 <frame_dummy+0>:	cmpq   $0x0,0x202090(%rip)        # 0x602e08
+   0x0000000000400d78 <frame_dummy+8>:	je     0x400d98 <frame_dummy+40>
+   0x0000000000400d7a <frame_dummy+10>:	mov    $0x0,%eax
+   0x0000000000400d7f <frame_dummy+15>:	test   %rax,%rax
+   0x0000000000400d82 <frame_dummy+18>:	je     0x400d98 <frame_dummy+40>
+   0x0000000000400d84 <frame_dummy+20>:	push   %rbp
+   0x0000000000400d85 <frame_dummy+21>:	mov    $0x602e08,%edi
+   0x0000000000400d8a <frame_dummy+26>:	mov    %rsp,%rbp
+   0x0000000000400d8d <frame_dummy+29>:	callq  *%rax
+   0x0000000000400d8f <frame_dummy+31>:	pop    %rbp
+   0x0000000000400d90 <frame_dummy+32>:	jmpq   0x400d10 <register_tm_clones>
+   0x0000000000400d95 <frame_dummy+37>:	nopl   (%rax)
+   0x0000000000400d98 <frame_dummy+40>:	jmpq   0x400d10 <register_tm_clones>
+   0x0000000000400d9d <frame_dummy+45>:	nop
+   0x0000000000400d9e <frame_dummy+46>:	nop
+   0x0000000000400d9f <frame_dummy+47>:	nop
+=> 0x0000000000400da0 <main+0>:	push   %rbx
+   0x0000000000400da1 <main+1>:	cmp    $0x1,%edi
+   0x0000000000400da4 <main+4>:	jne    0x400db6 <main+22>
+   0x0000000000400da6 <main+6>:	mov    0x20299b(%rip),%rax        # 0x603748 <stdin@@GLIBC_2.2.5>
+   0x0000000000400dad <main+13>:	mov    %rax,0x2029b4(%rip)        # 0x603768 <infile>
+   0x0000000000400db4 <main+20>:	jmp    0x400e19 <main+121>
+   0x0000000000400db6 <main+22>:	mov    %rsi,%rbx
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000400db9 <main+25>:	cmp    $0x2,%edi
+   0x0000000000400dbc <main+28>:	jne    0x400df8 <main+88>
+   0x0000000000400dbe <main+30>:	mov    0x8(%rsi),%rdi
+   0x0000000000400dc2 <main+34>:	mov    $0x4022b4,%esi
+   0x0000000000400dc7 <main+39>:	callq  0x400c10 <fopen@plt>
+   0x0000000000400dcc <main+44>:	mov    %rax,0x202995(%rip)        # 0x603768 <infile>
+   0x0000000000400dd3 <main+51>:	test   %rax,%rax
+   0x0000000000400dd6 <main+54>:	jne    0x400e19 <main+121>
+   0x0000000000400dd8 <main+56>:	mov    0x8(%rbx),%rcx
+   0x0000000000400ddc <main+60>:	mov    (%rbx),%rdx
+   0x0000000000400ddf <main+63>:	mov    $0x4022b6,%esi
+   0x0000000000400de4 <main+68>:	mov    $0x1,%edi
+   0x0000000000400de9 <main+73>:	callq  0x400c00 <__printf_chk@plt>
+   0x0000000000400dee <main+78>:	mov    $0x8,%edi
+   0x0000000000400df3 <main+83>:	callq  0x400c20 <exit@plt>
+   0x0000000000400df8 <main+88>:	mov    (%rsi),%rdx
+   0x0000000000400dfb <main+91>:	mov    $0x4022d3,%esi
+   0x0000000000400e00 <main+96>:	mov    $0x1,%edi
+   0x0000000000400e05 <main+101>:	mov    $0x0,%eax
+   0x0000000000400e0a <main+106>:	callq  0x400c00 <__printf_chk@plt>
+   0x0000000000400e0f <main+111>:	mov    $0x8,%edi
+   0x0000000000400e14 <main+116>:	callq  0x400c20 <exit@plt>
+   0x0000000000400e19 <main+121>:	callq  0x4013a2 <initialize_bomb>
+   0x0000000000400e1e <main+126>:	mov    $0x402338,%edi
+   0x0000000000400e23 <main+131>:	callq  0x400b10 <puts@plt>
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000400e28 <main+136>:	mov    $0x402378,%edi
+   0x0000000000400e2d <main+141>:	callq  0x400b10 <puts@plt>
+   0x0000000000400e32 <main+146>:	callq  0x40149e <read_line>
+   0x0000000000400e37 <main+151>:	mov    %rax,%rdi
+   0x0000000000400e3a <main+154>:	callq  0x400ee0 <phase_1>
+   0x0000000000400e3f <main+159>:	callq  0x4015c4 <phase_defused>
+   0x0000000000400e44 <main+164>:	mov    $0x4023a8,%edi
+   0x0000000000400e49 <main+169>:	callq  0x400b10 <puts@plt>
+   0x0000000000400e4e <main+174>:	callq  0x40149e <read_line>
+   0x0000000000400e53 <main+179>:	mov    %rax,%rdi
+   0x0000000000400e56 <main+182>:	callq  0x400efc <phase_2>
+   0x0000000000400e5b <main+187>:	callq  0x4015c4 <phase_defused>
+   0x0000000000400e60 <main+192>:	mov    $0x4022ed,%edi
+   0x0000000000400e65 <main+197>:	callq  0x400b10 <puts@plt>
+   0x0000000000400e6a <main+202>:	callq  0x40149e <read_line>
+   0x0000000000400e6f <main+207>:	mov    %rax,%rdi
+   0x0000000000400e72 <main+210>:	callq  0x400f43 <phase_3>
+   0x0000000000400e77 <main+215>:	callq  0x4015c4 <phase_defused>
+   0x0000000000400e7c <main+220>:	mov    $0x40230b,%edi
+   0x0000000000400e81 <main+225>:	callq  0x400b10 <puts@plt>
+   0x0000000000400e86 <main+230>:	callq  0x40149e <read_line>
+   0x0000000000400e8b <main+235>:	mov    %rax,%rdi
+   0x0000000000400e8e <main+238>:	callq  0x40100c <phase_4>
+   0x0000000000400e93 <main+243>:	callq  0x4015c4 <phase_defused>
+   0x0000000000400e98 <main+248>:	mov    $0x4023d8,%edi
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000400e9d <main+253>:	callq  0x400b10 <puts@plt>
+   0x0000000000400ea2 <main+258>:	callq  0x40149e <read_line>
+   0x0000000000400ea7 <main+263>:	mov    %rax,%rdi
+   0x0000000000400eaa <main+266>:	callq  0x401062 <phase_5>
+   0x0000000000400eaf <main+271>:	callq  0x4015c4 <phase_defused>
+   0x0000000000400eb4 <main+276>:	mov    $0x40231a,%edi
+   0x0000000000400eb9 <main+281>:	callq  0x400b10 <puts@plt>
+   0x0000000000400ebe <main+286>:	callq  0x40149e <read_line>
+   0x0000000000400ec3 <main+291>:	mov    %rax,%rdi
+   0x0000000000400ec6 <main+294>:	callq  0x4010f4 <phase_6>
+   0x0000000000400ecb <main+299>:	callq  0x4015c4 <phase_defused>
+   0x0000000000400ed0 <main+304>:	mov    $0x0,%eax
+   0x0000000000400ed5 <main+309>:	pop    %rbx
+   0x0000000000400ed6 <main+310>:	retq   
+   0x0000000000400ed7:	nop
+   0x0000000000400ed8:	nop
+   0x0000000000400ed9:	nop
+   0x0000000000400eda:	nop
+   0x0000000000400edb:	nop
+   0x0000000000400edc:	nop
+   0x0000000000400edd:	nop
+   0x0000000000400ede:	nop
+   0x0000000000400edf:	nop
+   0x0000000000400ee0 <phase_1+0>:	sub    $0x8,%rsp
+   0x0000000000400ee4 <phase_1+4>:	mov    $0x402400,%esi
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000400ee9 <phase_1+9>:	callq  0x401338 <strings_not_equal>
+   0x0000000000400eee <phase_1+14>:	test   %eax,%eax
+   0x0000000000400ef0 <phase_1+16>:	je     0x400ef7 <phase_1+23>
+   0x0000000000400ef2 <phase_1+18>:	callq  0x40143a <explode_bomb>
+   0x0000000000400ef7 <phase_1+23>:	add    $0x8,%rsp
+   0x0000000000400efb <phase_1+27>:	retq   
+   0x0000000000400efc <phase_2+0>:	push   %rbp
+   0x0000000000400efd <phase_2+1>:	push   %rbx
+   0x0000000000400efe <phase_2+2>:	sub    $0x28,%rsp
+   0x0000000000400f02 <phase_2+6>:	mov    %rsp,%rsi
+   0x0000000000400f05 <phase_2+9>:	callq  0x40145c <read_six_numbers>
+   0x0000000000400f0a <phase_2+14>:	cmpl   $0x1,(%rsp)
+   0x0000000000400f0e <phase_2+18>:	je     0x400f30 <phase_2+52>
+   0x0000000000400f10 <phase_2+20>:	callq  0x40143a <explode_bomb>
+   0x0000000000400f15 <phase_2+25>:	jmp    0x400f30 <phase_2+52>
+   0x0000000000400f17 <phase_2+27>:	mov    -0x4(%rbx),%eax
+   0x0000000000400f1a <phase_2+30>:	add    %eax,%eax
+   0x0000000000400f1c <phase_2+32>:	cmp    %eax,(%rbx)
+   0x0000000000400f1e <phase_2+34>:	je     0x400f25 <phase_2+41>
+   0x0000000000400f20 <phase_2+36>:	callq  0x40143a <explode_bomb>
+   0x0000000000400f25 <phase_2+41>:	add    $0x4,%rbx
+   0x0000000000400f29 <phase_2+45>:	cmp    %rbp,%rbx
+   0x0000000000400f2c <phase_2+48>:	jne    0x400f17 <phase_2+27>
+   0x0000000000400f2e <phase_2+50>:	jmp    0x400f3c <phase_2+64>
+   0x0000000000400f30 <phase_2+52>:	lea    0x4(%rsp),%rbx
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000400f35 <phase_2+57>:	lea    0x18(%rsp),%rbp
+   0x0000000000400f3a <phase_2+62>:	jmp    0x400f17 <phase_2+27>
+   0x0000000000400f3c <phase_2+64>:	add    $0x28,%rsp
+   0x0000000000400f40 <phase_2+68>:	pop    %rbx
+   0x0000000000400f41 <phase_2+69>:	pop    %rbp
+   0x0000000000400f42 <phase_2+70>:	retq   
+   0x0000000000400f43 <phase_3+0>:	sub    $0x18,%rsp
+   0x0000000000400f47 <phase_3+4>:	lea    0xc(%rsp),%rcx
+   0x0000000000400f4c <phase_3+9>:	lea    0x8(%rsp),%rdx
+   0x0000000000400f51 <phase_3+14>:	mov    $0x4025cf,%esi
+   0x0000000000400f56 <phase_3+19>:	mov    $0x0,%eax
+   0x0000000000400f5b <phase_3+24>:	callq  0x400bf0 <__isoc99_sscanf@plt>
+   0x0000000000400f60 <phase_3+29>:	cmp    $0x1,%eax
+   0x0000000000400f63 <phase_3+32>:	jg     0x400f6a <phase_3+39>
+   0x0000000000400f65 <phase_3+34>:	callq  0x40143a <explode_bomb>
+   0x0000000000400f6a <phase_3+39>:	cmpl   $0x7,0x8(%rsp)
+   0x0000000000400f6f <phase_3+44>:	ja     0x400fad <phase_3+106>
+   0x0000000000400f71 <phase_3+46>:	mov    0x8(%rsp),%eax
+   0x0000000000400f75 <phase_3+50>:	jmpq   *0x402470(,%rax,8)
+   0x0000000000400f7c <phase_3+57>:	mov    $0xcf,%eax
+   0x0000000000400f81 <phase_3+62>:	jmp    0x400fbe <phase_3+123>
+   0x0000000000400f83 <phase_3+64>:	mov    $0x2c3,%eax
+   0x0000000000400f88 <phase_3+69>:	jmp    0x400fbe <phase_3+123>
+   0x0000000000400f8a <phase_3+71>:	mov    $0x100,%eax
+   0x0000000000400f8f <phase_3+76>:	jmp    0x400fbe <phase_3+123>
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000400f91 <phase_3+78>:	mov    $0x185,%eax
+   0x0000000000400f96 <phase_3+83>:	jmp    0x400fbe <phase_3+123>
+   0x0000000000400f98 <phase_3+85>:	mov    $0xce,%eax
+   0x0000000000400f9d <phase_3+90>:	jmp    0x400fbe <phase_3+123>
+   0x0000000000400f9f <phase_3+92>:	mov    $0x2aa,%eax
+   0x0000000000400fa4 <phase_3+97>:	jmp    0x400fbe <phase_3+123>
+   0x0000000000400fa6 <phase_3+99>:	mov    $0x147,%eax
+   0x0000000000400fab <phase_3+104>:	jmp    0x400fbe <phase_3+123>
+   0x0000000000400fad <phase_3+106>:	callq  0x40143a <explode_bomb>
+   0x0000000000400fb2 <phase_3+111>:	mov    $0x0,%eax
+   0x0000000000400fb7 <phase_3+116>:	jmp    0x400fbe <phase_3+123>
+   0x0000000000400fb9 <phase_3+118>:	mov    $0x137,%eax
+   0x0000000000400fbe <phase_3+123>:	cmp    0xc(%rsp),%eax
+   0x0000000000400fc2 <phase_3+127>:	je     0x400fc9 <phase_3+134>
+   0x0000000000400fc4 <phase_3+129>:	callq  0x40143a <explode_bomb>
+   0x0000000000400fc9 <phase_3+134>:	add    $0x18,%rsp
+   0x0000000000400fcd <phase_3+138>:	retq   
+   0x0000000000400fce <func4+0>:	sub    $0x8,%rsp
+   0x0000000000400fd2 <func4+4>:	mov    %edx,%eax
+   0x0000000000400fd4 <func4+6>:	sub    %esi,%eax
+   0x0000000000400fd6 <func4+8>:	mov    %eax,%ecx
+   0x0000000000400fd8 <func4+10>:	shr    $0x1f,%ecx
+   0x0000000000400fdb <func4+13>:	add    %ecx,%eax
+   0x0000000000400fdd <func4+15>:	sar    %eax
+   0x0000000000400fdf <func4+17>:	lea    (%rax,%rsi,1),%ecx
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000400fe2 <func4+20>:	cmp    %edi,%ecx
+   0x0000000000400fe4 <func4+22>:	jle    0x400ff2 <func4+36>
+   0x0000000000400fe6 <func4+24>:	lea    -0x1(%rcx),%edx
+   0x0000000000400fe9 <func4+27>:	callq  0x400fce <func4>
+   0x0000000000400fee <func4+32>:	add    %eax,%eax
+   0x0000000000400ff0 <func4+34>:	jmp    0x401007 <func4+57>
+   0x0000000000400ff2 <func4+36>:	mov    $0x0,%eax
+   0x0000000000400ff7 <func4+41>:	cmp    %edi,%ecx
+   0x0000000000400ff9 <func4+43>:	jge    0x401007 <func4+57>
+   0x0000000000400ffb <func4+45>:	lea    0x1(%rcx),%esi
+   0x0000000000400ffe <func4+48>:	callq  0x400fce <func4>
+   0x0000000000401003 <func4+53>:	lea    0x1(%rax,%rax,1),%eax
+   0x0000000000401007 <func4+57>:	add    $0x8,%rsp
+   0x000000000040100b <func4+61>:	retq   
+   0x000000000040100c <phase_4+0>:	sub    $0x18,%rsp
+   0x0000000000401010 <phase_4+4>:	lea    0xc(%rsp),%rcx
+   0x0000000000401015 <phase_4+9>:	lea    0x8(%rsp),%rdx
+   0x000000000040101a <phase_4+14>:	mov    $0x4025cf,%esi
+   0x000000000040101f <phase_4+19>:	mov    $0x0,%eax
+   0x0000000000401024 <phase_4+24>:	callq  0x400bf0 <__isoc99_sscanf@plt>
+   0x0000000000401029 <phase_4+29>:	cmp    $0x2,%eax
+   0x000000000040102c <phase_4+32>:	jne    0x401035 <phase_4+41>
+   0x000000000040102e <phase_4+34>:	cmpl   $0xe,0x8(%rsp)
+   0x0000000000401033 <phase_4+39>:	jbe    0x40103a <phase_4+46>
+   0x0000000000401035 <phase_4+41>:	callq  0x40143a <explode_bomb>
+---Type <return> to continue, or q <return> to quit---
+   0x000000000040103a <phase_4+46>:	mov    $0xe,%edx
+   0x000000000040103f <phase_4+51>:	mov    $0x0,%esi
+   0x0000000000401044 <phase_4+56>:	mov    0x8(%rsp),%edi
+   0x0000000000401048 <phase_4+60>:	callq  0x400fce <func4>
+   0x000000000040104d <phase_4+65>:	test   %eax,%eax
+   0x000000000040104f <phase_4+67>:	jne    0x401058 <phase_4+76>
+   0x0000000000401051 <phase_4+69>:	cmpl   $0x0,0xc(%rsp)
+   0x0000000000401056 <phase_4+74>:	je     0x40105d <phase_4+81>
+   0x0000000000401058 <phase_4+76>:	callq  0x40143a <explode_bomb>
+   0x000000000040105d <phase_4+81>:	add    $0x18,%rsp
+   0x0000000000401061 <phase_4+85>:	retq   
+   0x0000000000401062 <phase_5+0>:	push   %rbx
+   0x0000000000401063 <phase_5+1>:	sub    $0x20,%rsp
+   0x0000000000401067 <phase_5+5>:	mov    %rdi,%rbx
+   0x000000000040106a <phase_5+8>:	mov    %fs:0x28,%rax
+   0x0000000000401073 <phase_5+17>:	mov    %rax,0x18(%rsp)
+   0x0000000000401078 <phase_5+22>:	xor    %eax,%eax
+   0x000000000040107a <phase_5+24>:	callq  0x40131b <string_length>
+   0x000000000040107f <phase_5+29>:	cmp    $0x6,%eax
+   0x0000000000401082 <phase_5+32>:	je     0x4010d2 <phase_5+112>
+   0x0000000000401084 <phase_5+34>:	callq  0x40143a <explode_bomb>
+   0x0000000000401089 <phase_5+39>:	jmp    0x4010d2 <phase_5+112>
+   0x000000000040108b <phase_5+41>:	movzbl (%rbx,%rax,1),%ecx
+   0x000000000040108f <phase_5+45>:	mov    %cl,(%rsp)
+   0x0000000000401092 <phase_5+48>:	mov    (%rsp),%rdx
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401096 <phase_5+52>:	and    $0xf,%edx
+   0x0000000000401099 <phase_5+55>:	movzbl 0x4024b0(%rdx),%edx
+   0x00000000004010a0 <phase_5+62>:	mov    %dl,0x10(%rsp,%rax,1)
+   0x00000000004010a4 <phase_5+66>:	add    $0x1,%rax
+   0x00000000004010a8 <phase_5+70>:	cmp    $0x6,%rax
+   0x00000000004010ac <phase_5+74>:	jne    0x40108b <phase_5+41>
+   0x00000000004010ae <phase_5+76>:	movb   $0x0,0x16(%rsp)
+   0x00000000004010b3 <phase_5+81>:	mov    $0x40245e,%esi
+   0x00000000004010b8 <phase_5+86>:	lea    0x10(%rsp),%rdi
+   0x00000000004010bd <phase_5+91>:	callq  0x401338 <strings_not_equal>
+   0x00000000004010c2 <phase_5+96>:	test   %eax,%eax
+   0x00000000004010c4 <phase_5+98>:	je     0x4010d9 <phase_5+119>
+   0x00000000004010c6 <phase_5+100>:	callq  0x40143a <explode_bomb>
+   0x00000000004010cb <phase_5+105>:	nopl   0x0(%rax,%rax,1)
+   0x00000000004010d0 <phase_5+110>:	jmp    0x4010d9 <phase_5+119>
+   0x00000000004010d2 <phase_5+112>:	mov    $0x0,%eax
+   0x00000000004010d7 <phase_5+117>:	jmp    0x40108b <phase_5+41>
+   0x00000000004010d9 <phase_5+119>:	mov    0x18(%rsp),%rax
+   0x00000000004010de <phase_5+124>:	xor    %fs:0x28,%rax
+   0x00000000004010e7 <phase_5+133>:	je     0x4010ee <phase_5+140>
+   0x00000000004010e9 <phase_5+135>:	callq  0x400b30 <__stack_chk_fail@plt>
+   0x00000000004010ee <phase_5+140>:	add    $0x20,%rsp
+   0x00000000004010f2 <phase_5+144>:	pop    %rbx
+   0x00000000004010f3 <phase_5+145>:	retq   
+   0x00000000004010f4 <phase_6+0>:	push   %r14
+---Type <return> to continue, or q <return> to quit---
+   0x00000000004010f6 <phase_6+2>:	push   %r13
+   0x00000000004010f8 <phase_6+4>:	push   %r12
+   0x00000000004010fa <phase_6+6>:	push   %rbp
+   0x00000000004010fb <phase_6+7>:	push   %rbx
+   0x00000000004010fc <phase_6+8>:	sub    $0x50,%rsp
+   0x0000000000401100 <phase_6+12>:	mov    %rsp,%r13
+   0x0000000000401103 <phase_6+15>:	mov    %rsp,%rsi
+   0x0000000000401106 <phase_6+18>:	callq  0x40145c <read_six_numbers>
+   0x000000000040110b <phase_6+23>:	mov    %rsp,%r14
+   0x000000000040110e <phase_6+26>:	mov    $0x0,%r12d
+   0x0000000000401114 <phase_6+32>:	mov    %r13,%rbp
+   0x0000000000401117 <phase_6+35>:	mov    0x0(%r13),%eax
+   0x000000000040111b <phase_6+39>:	sub    $0x1,%eax
+   0x000000000040111e <phase_6+42>:	cmp    $0x5,%eax
+   0x0000000000401121 <phase_6+45>:	jbe    0x401128 <phase_6+52>
+   0x0000000000401123 <phase_6+47>:	callq  0x40143a <explode_bomb>
+   0x0000000000401128 <phase_6+52>:	add    $0x1,%r12d
+   0x000000000040112c <phase_6+56>:	cmp    $0x6,%r12d
+   0x0000000000401130 <phase_6+60>:	je     0x401153 <phase_6+95>
+   0x0000000000401132 <phase_6+62>:	mov    %r12d,%ebx
+   0x0000000000401135 <phase_6+65>:	movslq %ebx,%rax
+   0x0000000000401138 <phase_6+68>:	mov    (%rsp,%rax,4),%eax
+   0x000000000040113b <phase_6+71>:	cmp    %eax,0x0(%rbp)
+   0x000000000040113e <phase_6+74>:	jne    0x401145 <phase_6+81>
+   0x0000000000401140 <phase_6+76>:	callq  0x40143a <explode_bomb>
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401145 <phase_6+81>:	add    $0x1,%ebx
+   0x0000000000401148 <phase_6+84>:	cmp    $0x5,%ebx
+   0x000000000040114b <phase_6+87>:	jle    0x401135 <phase_6+65>
+   0x000000000040114d <phase_6+89>:	add    $0x4,%r13
+   0x0000000000401151 <phase_6+93>:	jmp    0x401114 <phase_6+32>
+   0x0000000000401153 <phase_6+95>:	lea    0x18(%rsp),%rsi
+   0x0000000000401158 <phase_6+100>:	mov    %r14,%rax
+   0x000000000040115b <phase_6+103>:	mov    $0x7,%ecx
+   0x0000000000401160 <phase_6+108>:	mov    %ecx,%edx
+   0x0000000000401162 <phase_6+110>:	sub    (%rax),%edx
+   0x0000000000401164 <phase_6+112>:	mov    %edx,(%rax)
+   0x0000000000401166 <phase_6+114>:	add    $0x4,%rax
+   0x000000000040116a <phase_6+118>:	cmp    %rsi,%rax
+   0x000000000040116d <phase_6+121>:	jne    0x401160 <phase_6+108>
+   0x000000000040116f <phase_6+123>:	mov    $0x0,%esi
+   0x0000000000401174 <phase_6+128>:	jmp    0x401197 <phase_6+163>
+   0x0000000000401176 <phase_6+130>:	mov    0x8(%rdx),%rdx
+   0x000000000040117a <phase_6+134>:	add    $0x1,%eax
+   0x000000000040117d <phase_6+137>:	cmp    %ecx,%eax
+   0x000000000040117f <phase_6+139>:	jne    0x401176 <phase_6+130>
+   0x0000000000401181 <phase_6+141>:	jmp    0x401188 <phase_6+148>
+   0x0000000000401183 <phase_6+143>:	mov    $0x6032d0,%edx
+   0x0000000000401188 <phase_6+148>:	mov    %rdx,0x20(%rsp,%rsi,2)
+   0x000000000040118d <phase_6+153>:	add    $0x4,%rsi
+   0x0000000000401191 <phase_6+157>:	cmp    $0x18,%rsi
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401195 <phase_6+161>:	je     0x4011ab <phase_6+183>
+   0x0000000000401197 <phase_6+163>:	mov    (%rsp,%rsi,1),%ecx
+   0x000000000040119a <phase_6+166>:	cmp    $0x1,%ecx
+   0x000000000040119d <phase_6+169>:	jle    0x401183 <phase_6+143>
+   0x000000000040119f <phase_6+171>:	mov    $0x1,%eax
+   0x00000000004011a4 <phase_6+176>:	mov    $0x6032d0,%edx
+   0x00000000004011a9 <phase_6+181>:	jmp    0x401176 <phase_6+130>
+   0x00000000004011ab <phase_6+183>:	mov    0x20(%rsp),%rbx
+   0x00000000004011b0 <phase_6+188>:	lea    0x28(%rsp),%rax
+   0x00000000004011b5 <phase_6+193>:	lea    0x50(%rsp),%rsi
+   0x00000000004011ba <phase_6+198>:	mov    %rbx,%rcx
+   0x00000000004011bd <phase_6+201>:	mov    (%rax),%rdx
+   0x00000000004011c0 <phase_6+204>:	mov    %rdx,0x8(%rcx)
+   0x00000000004011c4 <phase_6+208>:	add    $0x8,%rax
+   0x00000000004011c8 <phase_6+212>:	cmp    %rsi,%rax
+   0x00000000004011cb <phase_6+215>:	je     0x4011d2 <phase_6+222>
+   0x00000000004011cd <phase_6+217>:	mov    %rdx,%rcx
+   0x00000000004011d0 <phase_6+220>:	jmp    0x4011bd <phase_6+201>
+   0x00000000004011d2 <phase_6+222>:	movq   $0x0,0x8(%rdx)
+   0x00000000004011da <phase_6+230>:	mov    $0x5,%ebp
+   0x00000000004011df <phase_6+235>:	mov    0x8(%rbx),%rax
+   0x00000000004011e3 <phase_6+239>:	mov    (%rax),%eax
+   0x00000000004011e5 <phase_6+241>:	cmp    %eax,(%rbx)
+   0x00000000004011e7 <phase_6+243>:	jge    0x4011ee <phase_6+250>
+   0x00000000004011e9 <phase_6+245>:	callq  0x40143a <explode_bomb>
+---Type <return> to continue, or q <return> to quit---
+   0x00000000004011ee <phase_6+250>:	mov    0x8(%rbx),%rbx
+   0x00000000004011f2 <phase_6+254>:	sub    $0x1,%ebp
+   0x00000000004011f5 <phase_6+257>:	jne    0x4011df <phase_6+235>
+   0x00000000004011f7 <phase_6+259>:	add    $0x50,%rsp
+   0x00000000004011fb <phase_6+263>:	pop    %rbx
+   0x00000000004011fc <phase_6+264>:	pop    %rbp
+   0x00000000004011fd <phase_6+265>:	pop    %r12
+   0x00000000004011ff <phase_6+267>:	pop    %r13
+   0x0000000000401201 <phase_6+269>:	pop    %r14
+   0x0000000000401203 <phase_6+271>:	retq   
+   0x0000000000401204 <fun7+0>:	sub    $0x8,%rsp
+   0x0000000000401208 <fun7+4>:	test   %rdi,%rdi
+   0x000000000040120b <fun7+7>:	je     0x401238 <fun7+52>
+   0x000000000040120d <fun7+9>:	mov    (%rdi),%edx
+   0x000000000040120f <fun7+11>:	cmp    %esi,%edx
+   0x0000000000401211 <fun7+13>:	jle    0x401220 <fun7+28>
+   0x0000000000401213 <fun7+15>:	mov    0x8(%rdi),%rdi
+   0x0000000000401217 <fun7+19>:	callq  0x401204 <fun7>
+   0x000000000040121c <fun7+24>:	add    %eax,%eax
+   0x000000000040121e <fun7+26>:	jmp    0x40123d <fun7+57>
+   0x0000000000401220 <fun7+28>:	mov    $0x0,%eax
+   0x0000000000401225 <fun7+33>:	cmp    %esi,%edx
+   0x0000000000401227 <fun7+35>:	je     0x40123d <fun7+57>
+   0x0000000000401229 <fun7+37>:	mov    0x10(%rdi),%rdi
+   0x000000000040122d <fun7+41>:	callq  0x401204 <fun7>
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401232 <fun7+46>:	lea    0x1(%rax,%rax,1),%eax
+   0x0000000000401236 <fun7+50>:	jmp    0x40123d <fun7+57>
+   0x0000000000401238 <fun7+52>:	mov    $0xffffffff,%eax
+   0x000000000040123d <fun7+57>:	add    $0x8,%rsp
+   0x0000000000401241 <fun7+61>:	retq   
+   0x0000000000401242 <secret_phase+0>:	push   %rbx
+   0x0000000000401243 <secret_phase+1>:	callq  0x40149e <read_line>
+   0x0000000000401248 <secret_phase+6>:	mov    $0xa,%edx
+   0x000000000040124d <secret_phase+11>:	mov    $0x0,%esi
+   0x0000000000401252 <secret_phase+16>:	mov    %rax,%rdi
+   0x0000000000401255 <secret_phase+19>:	callq  0x400bd0 <strtol@plt>
+   0x000000000040125a <secret_phase+24>:	mov    %rax,%rbx
+   0x000000000040125d <secret_phase+27>:	lea    -0x1(%rax),%eax
+   0x0000000000401260 <secret_phase+30>:	cmp    $0x3e8,%eax
+   0x0000000000401265 <secret_phase+35>:	jbe    0x40126c <secret_phase+42>
+   0x0000000000401267 <secret_phase+37>:	callq  0x40143a <explode_bomb>
+   0x000000000040126c <secret_phase+42>:	mov    %ebx,%esi
+   0x000000000040126e <secret_phase+44>:	mov    $0x6030f0,%edi
+   0x0000000000401273 <secret_phase+49>:	callq  0x401204 <fun7>
+   0x0000000000401278 <secret_phase+54>:	cmp    $0x2,%eax
+   0x000000000040127b <secret_phase+57>:	je     0x401282 <secret_phase+64>
+   0x000000000040127d <secret_phase+59>:	callq  0x40143a <explode_bomb>
+   0x0000000000401282 <secret_phase+64>:	mov    $0x402438,%edi
+   0x0000000000401287 <secret_phase+69>:	callq  0x400b10 <puts@plt>
+   0x000000000040128c <secret_phase+74>:	callq  0x4015c4 <phase_defused>
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401291 <secret_phase+79>:	pop    %rbx
+   0x0000000000401292 <secret_phase+80>:	retq   
+   0x0000000000401293:	nop
+   0x0000000000401294:	nop
+   0x0000000000401295:	nop
+   0x0000000000401296:	nop
+   0x0000000000401297:	nop
+   0x0000000000401298:	nop
+   0x0000000000401299:	nop
+   0x000000000040129a:	nop
+   0x000000000040129b:	nop
+   0x000000000040129c:	nop
+   0x000000000040129d:	nop
+   0x000000000040129e:	nop
+   0x000000000040129f:	nop
+   0x00000000004012a0 <sig_handler+0>:	sub    $0x8,%rsp
+   0x00000000004012a4 <sig_handler+4>:	mov    $0x4024c0,%edi
+   0x00000000004012a9 <sig_handler+9>:	callq  0x400b10 <puts@plt>
+   0x00000000004012ae <sig_handler+14>:	mov    $0x3,%edi
+   0x00000000004012b3 <sig_handler+19>:	callq  0x400c50 <sleep@plt>
+   0x00000000004012b8 <sig_handler+24>:	mov    $0x402582,%esi
+   0x00000000004012bd <sig_handler+29>:	mov    $0x1,%edi
+   0x00000000004012c2 <sig_handler+34>:	mov    $0x0,%eax
+   0x00000000004012c7 <sig_handler+39>:	callq  0x400c00 <__printf_chk@plt>
+   0x00000000004012cc <sig_handler+44>:	mov    0x20246d(%rip),%rdi        # 0x603740 <stdout@@---Type <return> to continue, or q <return> to quit---
+GLIBC_2.2.5>
+   0x00000000004012d3 <sig_handler+51>:	callq  0x400be0 <fflush@plt>
+   0x00000000004012d8 <sig_handler+56>:	mov    $0x1,%edi
+   0x00000000004012dd <sig_handler+61>:	callq  0x400c50 <sleep@plt>
+   0x00000000004012e2 <sig_handler+66>:	mov    $0x40258a,%edi
+   0x00000000004012e7 <sig_handler+71>:	callq  0x400b10 <puts@plt>
+   0x00000000004012ec <sig_handler+76>:	mov    $0x10,%edi
+   0x00000000004012f1 <sig_handler+81>:	callq  0x400c20 <exit@plt>
+   0x00000000004012f6 <invalid_phase+0>:	sub    $0x8,%rsp
+   0x00000000004012fa <invalid_phase+4>:	mov    %rdi,%rdx
+   0x00000000004012fd <invalid_phase+7>:	mov    $0x402592,%esi
+   0x0000000000401302 <invalid_phase+12>:	mov    $0x1,%edi
+   0x0000000000401307 <invalid_phase+17>:	mov    $0x0,%eax
+   0x000000000040130c <invalid_phase+22>:	callq  0x400c00 <__printf_chk@plt>
+   0x0000000000401311 <invalid_phase+27>:	mov    $0x8,%edi
+   0x0000000000401316 <invalid_phase+32>:	callq  0x400c20 <exit@plt>
+   0x000000000040131b <string_length+0>:	cmpb   $0x0,(%rdi)
+   0x000000000040131e <string_length+3>:	je     0x401332 <string_length+23>
+   0x0000000000401320 <string_length+5>:	mov    %rdi,%rdx
+   0x0000000000401323 <string_length+8>:	add    $0x1,%rdx
+   0x0000000000401327 <string_length+12>:	mov    %edx,%eax
+   0x0000000000401329 <string_length+14>:	sub    %edi,%eax
+   0x000000000040132b <string_length+16>:	cmpb   $0x0,(%rdx)
+   0x000000000040132e <string_length+19>:	jne    0x401323 <string_length+8>
+   0x0000000000401330 <string_length+21>:	repz retq 
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401332 <string_length+23>:	mov    $0x0,%eax
+   0x0000000000401337 <string_length+28>:	retq   
+   0x0000000000401338 <strings_not_equal+0>:	push   %r12
+   0x000000000040133a <strings_not_equal+2>:	push   %rbp
+   0x000000000040133b <strings_not_equal+3>:	push   %rbx
+   0x000000000040133c <strings_not_equal+4>:	mov    %rdi,%rbx
+   0x000000000040133f <strings_not_equal+7>:	mov    %rsi,%rbp
+   0x0000000000401342 <strings_not_equal+10>:	callq  0x40131b <string_length>
+   0x0000000000401347 <strings_not_equal+15>:	mov    %eax,%r12d
+   0x000000000040134a <strings_not_equal+18>:	mov    %rbp,%rdi
+   0x000000000040134d <strings_not_equal+21>:	callq  0x40131b <string_length>
+   0x0000000000401352 <strings_not_equal+26>:	mov    $0x1,%edx
+   0x0000000000401357 <strings_not_equal+31>:	cmp    %eax,%r12d
+   0x000000000040135a <strings_not_equal+34>:	jne    0x40139b <strings_not_equal+99>
+   0x000000000040135c <strings_not_equal+36>:	movzbl (%rbx),%eax
+   0x000000000040135f <strings_not_equal+39>:	test   %al,%al
+   0x0000000000401361 <strings_not_equal+41>:	je     0x401388 <strings_not_equal+80>
+   0x0000000000401363 <strings_not_equal+43>:	cmp    0x0(%rbp),%al
+   0x0000000000401366 <strings_not_equal+46>:	je     0x401372 <strings_not_equal+58>
+   0x0000000000401368 <strings_not_equal+48>:	jmp    0x40138f <strings_not_equal+87>
+   0x000000000040136a <strings_not_equal+50>:	cmp    0x0(%rbp),%al
+   0x000000000040136d <strings_not_equal+53>:	nopl   (%rax)
+   0x0000000000401370 <strings_not_equal+56>:	jne    0x401396 <strings_not_equal+94>
+   0x0000000000401372 <strings_not_equal+58>:	add    $0x1,%rbx
+   0x0000000000401376 <strings_not_equal+62>:	add    $0x1,%rbp
+---Type <return> to continue, or q <return> to quit---
+   0x000000000040137a <strings_not_equal+66>:	movzbl (%rbx),%eax
+   0x000000000040137d <strings_not_equal+69>:	test   %al,%al
+   0x000000000040137f <strings_not_equal+71>:	jne    0x40136a <strings_not_equal+50>
+   0x0000000000401381 <strings_not_equal+73>:	mov    $0x0,%edx
+   0x0000000000401386 <strings_not_equal+78>:	jmp    0x40139b <strings_not_equal+99>
+   0x0000000000401388 <strings_not_equal+80>:	mov    $0x0,%edx
+   0x000000000040138d <strings_not_equal+85>:	jmp    0x40139b <strings_not_equal+99>
+   0x000000000040138f <strings_not_equal+87>:	mov    $0x1,%edx
+   0x0000000000401394 <strings_not_equal+92>:	jmp    0x40139b <strings_not_equal+99>
+   0x0000000000401396 <strings_not_equal+94>:	mov    $0x1,%edx
+   0x000000000040139b <strings_not_equal+99>:	mov    %edx,%eax
+   0x000000000040139d <strings_not_equal+101>:	pop    %rbx
+   0x000000000040139e <strings_not_equal+102>:	pop    %rbp
+   0x000000000040139f <strings_not_equal+103>:	pop    %r12
+   0x00000000004013a1 <strings_not_equal+105>:	retq   
+   0x00000000004013a2 <initialize_bomb+0>:	sub    $0x8,%rsp
+   0x00000000004013a6 <initialize_bomb+4>:	mov    $0x4012a0,%esi
+   0x00000000004013ab <initialize_bomb+9>:	mov    $0x2,%edi
+   0x00000000004013b0 <initialize_bomb+14>:	callq  0x400b90 <signal@plt>
+   0x00000000004013b5 <initialize_bomb+19>:	add    $0x8,%rsp
+   0x00000000004013b9 <initialize_bomb+23>:	retq   
+   0x00000000004013ba <initialize_bomb_solve+0>:	repz retq 
+   0x00000000004013bc <blank_line+0>:	push   %rbp
+   0x00000000004013bd <blank_line+1>:	push   %rbx
+   0x00000000004013be <blank_line+2>:	sub    $0x8,%rsp
+---Type <return> to continue, or q <return> to quit---
+   0x00000000004013c2 <blank_line+6>:	mov    %rdi,%rbx
+   0x00000000004013c5 <blank_line+9>:	jmp    0x4013de <blank_line+34>
+   0x00000000004013c7 <blank_line+11>:	callq  0x400c60 <__ctype_b_loc@plt>
+   0x00000000004013cc <blank_line+16>:	add    $0x1,%rbx
+   0x00000000004013d0 <blank_line+20>:	movsbq %bpl,%rbp
+   0x00000000004013d4 <blank_line+24>:	mov    (%rax),%rax
+   0x00000000004013d7 <blank_line+27>:	testb  $0x20,0x1(%rax,%rbp,2)
+   0x00000000004013dc <blank_line+32>:	je     0x4013ed <blank_line+49>
+   0x00000000004013de <blank_line+34>:	movzbl (%rbx),%ebp
+   0x00000000004013e1 <blank_line+37>:	test   %bpl,%bpl
+   0x00000000004013e4 <blank_line+40>:	jne    0x4013c7 <blank_line+11>
+   0x00000000004013e6 <blank_line+42>:	mov    $0x1,%eax
+   0x00000000004013eb <blank_line+47>:	jmp    0x4013f2 <blank_line+54>
+   0x00000000004013ed <blank_line+49>:	mov    $0x0,%eax
+   0x00000000004013f2 <blank_line+54>:	add    $0x8,%rsp
+   0x00000000004013f6 <blank_line+58>:	pop    %rbx
+   0x00000000004013f7 <blank_line+59>:	pop    %rbp
+   0x00000000004013f8 <blank_line+60>:	retq   
+   0x00000000004013f9 <skip+0>:	push   %rbx
+   0x00000000004013fa <skip+1>:	movslq 0x20235f(%rip),%rax        # 0x603760 <num_input_strings>
+   0x0000000000401401 <skip+8>:	lea    (%rax,%rax,4),%rdi
+   0x0000000000401405 <skip+12>:	shl    $0x4,%rdi
+   0x0000000000401409 <skip+16>:	add    $0x603780,%rdi
+   0x0000000000401410 <skip+23>:	mov    0x202351(%rip),%rdx        # 0x603768 <infile>
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401417 <skip+30>:	mov    $0x50,%esi
+   0x000000000040141c <skip+35>:	callq  0x400b80 <fgets@plt>
+   0x0000000000401421 <skip+40>:	mov    %rax,%rbx
+   0x0000000000401424 <skip+43>:	test   %rax,%rax
+   0x0000000000401427 <skip+46>:	je     0x401435 <skip+60>
+   0x0000000000401429 <skip+48>:	mov    %rax,%rdi
+   0x000000000040142c <skip+51>:	callq  0x4013bc <blank_line>
+   0x0000000000401431 <skip+56>:	test   %eax,%eax
+   0x0000000000401433 <skip+58>:	jne    0x4013fa <skip+1>
+   0x0000000000401435 <skip+60>:	mov    %rbx,%rax
+   0x0000000000401438 <skip+63>:	pop    %rbx
+   0x0000000000401439 <skip+64>:	retq   
+   0x000000000040143a <explode_bomb+0>:	sub    $0x8,%rsp
+   0x000000000040143e <explode_bomb+4>:	mov    $0x4025a3,%edi
+   0x0000000000401443 <explode_bomb+9>:	callq  0x400b10 <puts@plt>
+   0x0000000000401448 <explode_bomb+14>:	mov    $0x4025ac,%edi
+   0x000000000040144d <explode_bomb+19>:	callq  0x400b10 <puts@plt>
+   0x0000000000401452 <explode_bomb+24>:	mov    $0x8,%edi
+   0x0000000000401457 <explode_bomb+29>:	callq  0x400c20 <exit@plt>
+   0x000000000040145c <read_six_numbers+0>:	sub    $0x18,%rsp
+   0x0000000000401460 <read_six_numbers+4>:	mov    %rsi,%rdx
+   0x0000000000401463 <read_six_numbers+7>:	lea    0x4(%rsi),%rcx
+   0x0000000000401467 <read_six_numbers+11>:	lea    0x14(%rsi),%rax
+   0x000000000040146b <read_six_numbers+15>:	mov    %rax,0x8(%rsp)
+   0x0000000000401470 <read_six_numbers+20>:	lea    0x10(%rsi),%rax
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401474 <read_six_numbers+24>:	mov    %rax,(%rsp)
+   0x0000000000401478 <read_six_numbers+28>:	lea    0xc(%rsi),%r9
+   0x000000000040147c <read_six_numbers+32>:	lea    0x8(%rsi),%r8
+   0x0000000000401480 <read_six_numbers+36>:	mov    $0x4025c3,%esi
+   0x0000000000401485 <read_six_numbers+41>:	mov    $0x0,%eax
+   0x000000000040148a <read_six_numbers+46>:	callq  0x400bf0 <__isoc99_sscanf@plt>
+   0x000000000040148f <read_six_numbers+51>:	cmp    $0x5,%eax
+   0x0000000000401492 <read_six_numbers+54>:	jg     0x401499 <read_six_numbers+61>
+   0x0000000000401494 <read_six_numbers+56>:	callq  0x40143a <explode_bomb>
+   0x0000000000401499 <read_six_numbers+61>:	add    $0x18,%rsp
+   0x000000000040149d <read_six_numbers+65>:	retq   
+   0x000000000040149e <read_line+0>:	sub    $0x8,%rsp
+   0x00000000004014a2 <read_line+4>:	mov    $0x0,%eax
+   0x00000000004014a7 <read_line+9>:	callq  0x4013f9 <skip>
+   0x00000000004014ac <read_line+14>:	test   %rax,%rax
+   0x00000000004014af <read_line+17>:	jne    0x40151f <read_line+129>
+   0x00000000004014b1 <read_line+19>:	mov    0x202290(%rip),%rax        # 0x603748 <stdin@@GLIBC_2.2.5>
+   0x00000000004014b8 <read_line+26>:	cmp    %rax,0x2022a9(%rip)        # 0x603768 <infile>
+   0x00000000004014bf <read_line+33>:	jne    0x4014d5 <read_line+55>
+   0x00000000004014c1 <read_line+35>:	mov    $0x4025d5,%edi
+   0x00000000004014c6 <read_line+40>:	callq  0x400b10 <puts@plt>
+   0x00000000004014cb <read_line+45>:	mov    $0x8,%edi
+   0x00000000004014d0 <read_line+50>:	callq  0x400c20 <exit@plt>
+   0x00000000004014d5 <read_line+55>:	mov    $0x4025f3,%edi
+---Type <return> to continue, or q <return> to quit---
+   0x00000000004014da <read_line+60>:	callq  0x400ae0 <getenv@plt>
+   0x00000000004014df <read_line+65>:	test   %rax,%rax
+   0x00000000004014e2 <read_line+68>:	je     0x4014ee <read_line+80>
+   0x00000000004014e4 <read_line+70>:	mov    $0x0,%edi
+   0x00000000004014e9 <read_line+75>:	callq  0x400c20 <exit@plt>
+   0x00000000004014ee <read_line+80>:	mov    0x202253(%rip),%rax        # 0x603748 <stdin@@GLIBC_2.2.5>
+   0x00000000004014f5 <read_line+87>:	mov    %rax,0x20226c(%rip)        # 0x603768 <infile>
+   0x00000000004014fc <read_line+94>:	mov    $0x0,%eax
+   0x0000000000401501 <read_line+99>:	callq  0x4013f9 <skip>
+   0x0000000000401506 <read_line+104>:	test   %rax,%rax
+   0x0000000000401509 <read_line+107>:	jne    0x40151f <read_line+129>
+   0x000000000040150b <read_line+109>:	mov    $0x4025d5,%edi
+   0x0000000000401510 <read_line+114>:	callq  0x400b10 <puts@plt>
+   0x0000000000401515 <read_line+119>:	mov    $0x0,%edi
+   0x000000000040151a <read_line+124>:	callq  0x400c20 <exit@plt>
+   0x000000000040151f <read_line+129>:	mov    0x20223b(%rip),%edx        # 0x603760 <num_input_strings>
+   0x0000000000401525 <read_line+135>:	movslq %edx,%rax
+   0x0000000000401528 <read_line+138>:	lea    (%rax,%rax,4),%rsi
+   0x000000000040152c <read_line+142>:	shl    $0x4,%rsi
+   0x0000000000401530 <read_line+146>:	add    $0x603780,%rsi
+   0x0000000000401537 <read_line+153>:	mov    %rsi,%rdi
+   0x000000000040153a <read_line+156>:	mov    $0x0,%eax
+   0x000000000040153f <read_line+161>:	mov    $0xffffffffffffffff,%rcx
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401546 <read_line+168>:	repnz scas %es:(%rdi),%al
+   0x0000000000401548 <read_line+170>:	not    %rcx
+   0x000000000040154b <read_line+173>:	sub    $0x1,%rcx
+   0x000000000040154f <read_line+177>:	cmp    $0x4e,%ecx
+   0x0000000000401552 <read_line+180>:	jle    0x40159a <read_line+252>
+   0x0000000000401554 <read_line+182>:	mov    $0x4025fe,%edi
+   0x0000000000401559 <read_line+187>:	callq  0x400b10 <puts@plt>
+   0x000000000040155e <read_line+192>:	mov    0x2021fc(%rip),%eax        # 0x603760 <num_input_strings>
+   0x0000000000401564 <read_line+198>:	lea    0x1(%rax),%edx
+   0x0000000000401567 <read_line+201>:	mov    %edx,0x2021f3(%rip)        # 0x603760 <num_input_strings>
+   0x000000000040156d <read_line+207>:	cltq   
+   0x000000000040156f <read_line+209>:	imul   $0x50,%rax,%rax
+   0x0000000000401573 <read_line+213>:	movabs $0x636e7572742a2a2a,%rdi
+   0x000000000040157d <read_line+223>:	mov    %rdi,0x603780(%rax)
+   0x0000000000401584 <read_line+230>:	movabs $0x2a2a2a64657461,%rdi
+   0x000000000040158e <read_line+240>:	mov    %rdi,0x603788(%rax)
+   0x0000000000401595 <read_line+247>:	callq  0x40143a <explode_bomb>
+   0x000000000040159a <read_line+252>:	sub    $0x1,%ecx
+   0x000000000040159d <read_line+255>:	movslq %ecx,%rcx
+   0x00000000004015a0 <read_line+258>:	movslq %edx,%rax
+   0x00000000004015a3 <read_line+261>:	lea    (%rax,%rax,4),%rax
+   0x00000000004015a7 <read_line+265>:	shl    $0x4,%rax
+   0x00000000004015ab <read_line+269>:	movb   $0x0,0x603780(%rcx,%rax,1)
+---Type <return> to continue, or q <return> to quit---
+   0x00000000004015b3 <read_line+277>:	add    $0x1,%edx
+   0x00000000004015b6 <read_line+280>:	mov    %edx,0x2021a4(%rip)        # 0x603760 <num_input_strings>
+   0x00000000004015bc <read_line+286>:	mov    %rsi,%rax
+   0x00000000004015bf <read_line+289>:	add    $0x8,%rsp
+   0x00000000004015c3 <read_line+293>:	retq   
+   0x00000000004015c4 <phase_defused+0>:	sub    $0x78,%rsp
+   0x00000000004015c8 <phase_defused+4>:	mov    %fs:0x28,%rax
+   0x00000000004015d1 <phase_defused+13>:	mov    %rax,0x68(%rsp)
+   0x00000000004015d6 <phase_defused+18>:	xor    %eax,%eax
+   0x00000000004015d8 <phase_defused+20>:	cmpl   $0x6,0x202181(%rip)        # 0x603760 <num_input_strings>
+   0x00000000004015df <phase_defused+27>:	jne    0x40163f <phase_defused+123>
+   0x00000000004015e1 <phase_defused+29>:	lea    0x10(%rsp),%r8
+   0x00000000004015e6 <phase_defused+34>:	lea    0xc(%rsp),%rcx
+   0x00000000004015eb <phase_defused+39>:	lea    0x8(%rsp),%rdx
+   0x00000000004015f0 <phase_defused+44>:	mov    $0x402619,%esi
+   0x00000000004015f5 <phase_defused+49>:	mov    $0x603870,%edi
+   0x00000000004015fa <phase_defused+54>:	callq  0x400bf0 <__isoc99_sscanf@plt>
+   0x00000000004015ff <phase_defused+59>:	cmp    $0x3,%eax
+   0x0000000000401602 <phase_defused+62>:	jne    0x401635 <phase_defused+113>
+   0x0000000000401604 <phase_defused+64>:	mov    $0x402622,%esi
+   0x0000000000401609 <phase_defused+69>:	lea    0x10(%rsp),%rdi
+   0x000000000040160e <phase_defused+74>:	callq  0x401338 <strings_not_equal>
+   0x0000000000401613 <phase_defused+79>:	test   %eax,%eax
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401615 <phase_defused+81>:	jne    0x401635 <phase_defused+113>
+   0x0000000000401617 <phase_defused+83>:	mov    $0x4024f8,%edi
+   0x000000000040161c <phase_defused+88>:	callq  0x400b10 <puts@plt>
+   0x0000000000401621 <phase_defused+93>:	mov    $0x402520,%edi
+   0x0000000000401626 <phase_defused+98>:	callq  0x400b10 <puts@plt>
+   0x000000000040162b <phase_defused+103>:	mov    $0x0,%eax
+   0x0000000000401630 <phase_defused+108>:	callq  0x401242 <secret_phase>
+   0x0000000000401635 <phase_defused+113>:	mov    $0x402558,%edi
+   0x000000000040163a <phase_defused+118>:	callq  0x400b10 <puts@plt>
+   0x000000000040163f <phase_defused+123>:	mov    0x68(%rsp),%rax
+   0x0000000000401644 <phase_defused+128>:	xor    %fs:0x28,%rax
+   0x000000000040164d <phase_defused+137>:	je     0x401654 <phase_defused+144>
+   0x000000000040164f <phase_defused+139>:	callq  0x400b30 <__stack_chk_fail@plt>
+   0x0000000000401654 <phase_defused+144>:	add    $0x78,%rsp
+   0x0000000000401658 <phase_defused+148>:	retq   
+   0x0000000000401659:	nop
+   0x000000000040165a:	nop
+   0x000000000040165b:	nop
+   0x000000000040165c:	nop
+   0x000000000040165d:	nop
+   0x000000000040165e:	nop
+   0x000000000040165f:	nop
+   0x0000000000401660 <sigalrm_handler+0>:	sub    $0x8,%rsp
+   0x0000000000401664 <sigalrm_handler+4>:	mov    $0x0,%ecx
+   0x0000000000401669 <sigalrm_handler+9>:	mov    $0x402678,%edx
+---Type <return> to continue, or q <return> to quit---
+   0x000000000040166e <sigalrm_handler+14>:	mov    $0x1,%esi
+   0x0000000000401673 <sigalrm_handler+19>:	mov    0x2020d6(%rip),%rdi        # 0x603750 <stderr@@GLIBC_2.2.5>
+   0x000000000040167a <sigalrm_handler+26>:	mov    $0x0,%eax
+   0x000000000040167f <sigalrm_handler+31>:	callq  0x400c40 <__fprintf_chk@plt>
+   0x0000000000401684 <sigalrm_handler+36>:	mov    $0x1,%edi
+   0x0000000000401689 <sigalrm_handler+41>:	callq  0x400c20 <exit@plt>
+   0x000000000040168e <rio_readlineb+0>:	push   %r15
+   0x0000000000401690 <rio_readlineb+2>:	push   %r14
+   0x0000000000401692 <rio_readlineb+4>:	push   %r13
+   0x0000000000401694 <rio_readlineb+6>:	push   %r12
+   0x0000000000401696 <rio_readlineb+8>:	push   %rbp
+   0x0000000000401697 <rio_readlineb+9>:	push   %rbx
+   0x0000000000401698 <rio_readlineb+10>:	sub    $0x38,%rsp
+   0x000000000040169c <rio_readlineb+14>:	mov    %rsi,%r14
+   0x000000000040169f <rio_readlineb+17>:	mov    %rdx,0x18(%rsp)
+   0x00000000004016a4 <rio_readlineb+22>:	cmp    $0x1,%rdx
+   0x00000000004016a8 <rio_readlineb+26>:	jbe    0x401777 <rio_readlineb+233>
+   0x00000000004016ae <rio_readlineb+32>:	mov    %rdi,%rbx
+   0x00000000004016b1 <rio_readlineb+35>:	mov    $0x1,%r13d
+   0x00000000004016b7 <rio_readlineb+41>:	lea    0x10(%rdi),%r12
+   0x00000000004016bb <rio_readlineb+45>:	jmp    0x4016ed <rio_readlineb+95>
+   0x00000000004016bd <rio_readlineb+47>:	mov    $0x2000,%edx
+   0x00000000004016c2 <rio_readlineb+52>:	mov    %r12,%rsi
+   0x00000000004016c5 <rio_readlineb+55>:	mov    (%rbx),%edi
+---Type <return> to continue, or q <return> to quit---
+   0x00000000004016c7 <rio_readlineb+57>:	callq  0x400b60 <read@plt>
+   0x00000000004016cc <rio_readlineb+62>:	mov    %eax,0x4(%rbx)
+   0x00000000004016cf <rio_readlineb+65>:	test   %eax,%eax
+   0x00000000004016d1 <rio_readlineb+67>:	jns    0x4016e5 <rio_readlineb+87>
+   0x00000000004016d3 <rio_readlineb+69>:	callq  0x400af0 <__errno_location@plt>
+   0x00000000004016d8 <rio_readlineb+74>:	cmpl   $0x4,(%rax)
+   0x00000000004016db <rio_readlineb+77>:	je     0x4016ed <rio_readlineb+95>
+   0x00000000004016dd <rio_readlineb+79>:	nopl   (%rax)
+   0x00000000004016e0 <rio_readlineb+82>:	jmpq   0x401786 <rio_readlineb+248>
+   0x00000000004016e5 <rio_readlineb+87>:	test   %eax,%eax
+   0x00000000004016e7 <rio_readlineb+89>:	je     0x40175a <rio_readlineb+204>
+   0x00000000004016e9 <rio_readlineb+91>:	mov    %r12,0x8(%rbx)
+   0x00000000004016ed <rio_readlineb+95>:	mov    0x4(%rbx),%ebp
+   0x00000000004016f0 <rio_readlineb+98>:	test   %ebp,%ebp
+   0x00000000004016f2 <rio_readlineb+100>:	jle    0x4016bd <rio_readlineb+47>
+   0x00000000004016f4 <rio_readlineb+102>:	test   %ebp,%ebp
+   0x00000000004016f6 <rio_readlineb+104>:	setne  %r15b
+   0x00000000004016fa <rio_readlineb+108>:	movzbl %r15b,%eax
+   0x00000000004016fe <rio_readlineb+112>:	mov    %eax,0xc(%rsp)
+   0x0000000000401702 <rio_readlineb+116>:	movzbl %r15b,%r15d
+   0x0000000000401706 <rio_readlineb+120>:	mov    0x8(%rbx),%rcx
+   0x000000000040170a <rio_readlineb+124>:	mov    %rcx,%rsi
+   0x000000000040170d <rio_readlineb+127>:	mov    $0x1,%ecx
+   0x0000000000401712 <rio_readlineb+132>:	mov    %r15,%rdx
+   0x0000000000401715 <rio_readlineb+135>:	mov    %rsi,0x10(%rsp)
+---Type <return> to continue, or q <return> to quit---
+   0x000000000040171a <rio_readlineb+140>:	lea    0x2f(%rsp),%rdi
+   0x000000000040171f <rio_readlineb+145>:	callq  0x400bc0 <__memcpy_chk@plt>
+   0x0000000000401724 <rio_readlineb+150>:	add    0x10(%rsp),%r15
+   0x0000000000401729 <rio_readlineb+155>:	mov    %r15,0x8(%rbx)
+   0x000000000040172d <rio_readlineb+159>:	mov    0xc(%rsp),%eax
+   0x0000000000401731 <rio_readlineb+163>:	sub    %eax,%ebp
+   0x0000000000401733 <rio_readlineb+165>:	mov    %ebp,0x4(%rbx)
+   0x0000000000401736 <rio_readlineb+168>:	cmp    $0x1,%eax
+   0x0000000000401739 <rio_readlineb+171>:	jne    0x40174e <rio_readlineb+192>
+   0x000000000040173b <rio_readlineb+173>:	add    $0x1,%r14
+   0x000000000040173f <rio_readlineb+177>:	movzbl 0x2f(%rsp),%eax
+   0x0000000000401744 <rio_readlineb+182>:	mov    %al,-0x1(%r14)
+   0x0000000000401748 <rio_readlineb+186>:	cmp    $0xa,%al
+   0x000000000040174a <rio_readlineb+188>:	jne    0x401764 <rio_readlineb+214>
+   0x000000000040174c <rio_readlineb+190>:	jmp    0x40177d <rio_readlineb+239>
+   0x000000000040174e <rio_readlineb+192>:	cmpl   $0x0,0xc(%rsp)
+   0x0000000000401753 <rio_readlineb+197>:	jne    0x40178f <rio_readlineb+257>
+   0x0000000000401755 <rio_readlineb+199>:	mov    %r13d,%eax
+   0x0000000000401758 <rio_readlineb+202>:	jmp    0x40175d <rio_readlineb+207>
+   0x000000000040175a <rio_readlineb+204>:	mov    %r13d,%eax
+   0x000000000040175d <rio_readlineb+207>:	cmp    $0x1,%eax
+   0x0000000000401760 <rio_readlineb+210>:	jne    0x40177d <rio_readlineb+239>
+   0x0000000000401762 <rio_readlineb+212>:	jmp    0x401798 <rio_readlineb+266>
+   0x0000000000401764 <rio_readlineb+214>:	add    $0x1,%r13d
+   0x0000000000401768 <rio_readlineb+218>:	movslq %r13d,%rax
+---Type <return> to continue, or q <return> to quit---
+   0x000000000040176b <rio_readlineb+221>:	cmp    0x18(%rsp),%rax
+   0x0000000000401770 <rio_readlineb+226>:	jae    0x40177d <rio_readlineb+239>
+   0x0000000000401772 <rio_readlineb+228>:	jmpq   0x4016ed <rio_readlineb+95>
+   0x0000000000401777 <rio_readlineb+233>:	mov    $0x1,%r13d
+   0x000000000040177d <rio_readlineb+239>:	movb   $0x0,(%r14)
+   0x0000000000401781 <rio_readlineb+243>:	movslq %r13d,%rax
+   0x0000000000401784 <rio_readlineb+246>:	jmp    0x40179d <rio_readlineb+271>
+   0x0000000000401786 <rio_readlineb+248>:	mov    $0xffffffffffffffff,%rax
+   0x000000000040178d <rio_readlineb+255>:	jmp    0x40179d <rio_readlineb+271>
+   0x000000000040178f <rio_readlineb+257>:	mov    $0xffffffffffffffff,%rax
+   0x0000000000401796 <rio_readlineb+264>:	jmp    0x40179d <rio_readlineb+271>
+   0x0000000000401798 <rio_readlineb+266>:	mov    $0x0,%eax
+   0x000000000040179d <rio_readlineb+271>:	add    $0x38,%rsp
+   0x00000000004017a1 <rio_readlineb+275>:	pop    %rbx
+   0x00000000004017a2 <rio_readlineb+276>:	pop    %rbp
+   0x00000000004017a3 <rio_readlineb+277>:	pop    %r12
+   0x00000000004017a5 <rio_readlineb+279>:	pop    %r13
+   0x00000000004017a7 <rio_readlineb+281>:	pop    %r14
+   0x00000000004017a9 <rio_readlineb+283>:	pop    %r15
+   0x00000000004017ab <rio_readlineb+285>:	retq   
+   0x00000000004017ac <submitr+0>:	push   %r15
+   0x00000000004017ae <submitr+2>:	push   %r14
+   0x00000000004017b0 <submitr+4>:	push   %r13
+   0x00000000004017b2 <submitr+6>:	push   %r12
+   0x00000000004017b4 <submitr+8>:	push   %rbp
+---Type <return> to continue, or q <return> to quit---
+   0x00000000004017b5 <submitr+9>:	push   %rbx
+   0x00000000004017b6 <submitr+10>:	sub    $0xa068,%rsp
+   0x00000000004017bd <submitr+17>:	mov    %rdi,%rbp
+   0x00000000004017c0 <submitr+20>:	mov    %esi,%r13d
+   0x00000000004017c3 <submitr+23>:	mov    %rdx,0x10(%rsp)
+   0x00000000004017c8 <submitr+28>:	mov    %rcx,0x18(%rsp)
+   0x00000000004017cd <submitr+33>:	mov    %r8,%r15
+   0x00000000004017d0 <submitr+36>:	mov    %r9,%rbx
+   0x00000000004017d3 <submitr+39>:	mov    0xa0a0(%rsp),%r14
+   0x00000000004017db <submitr+47>:	mov    %fs:0x28,%rax
+   0x00000000004017e4 <submitr+56>:	mov    %rax,0xa058(%rsp)
+   0x00000000004017ec <submitr+64>:	xor    %eax,%eax
+   0x00000000004017ee <submitr+66>:	movl   $0x0,0x2c(%rsp)
+   0x00000000004017f6 <submitr+74>:	mov    $0x0,%edx
+   0x00000000004017fb <submitr+79>:	mov    $0x1,%esi
+   0x0000000000401800 <submitr+84>:	mov    $0x2,%edi
+   0x0000000000401805 <submitr+89>:	callq  0x400c80 <socket@plt>
+   0x000000000040180a <submitr+94>:	mov    %eax,%r12d
+   0x000000000040180d <submitr+97>:	test   %eax,%eax
+   0x000000000040180f <submitr+99>:	jns    0x401861 <submitr+181>
+   0x0000000000401811 <submitr+101>:	movabs $0x43203a726f727245,%rax
+   0x000000000040181b <submitr+111>:	mov    %rax,(%r14)
+   0x000000000040181e <submitr+114>:	movabs $0x6e7520746e65696c,%rax
+   0x0000000000401828 <submitr+124>:	mov    %rax,0x8(%r14)
+   0x000000000040182c <submitr+128>:	movabs $0x206f7420656c6261,%rax
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401836 <submitr+138>:	mov    %rax,0x10(%r14)
+   0x000000000040183a <submitr+142>:	movabs $0x7320657461657263,%rax
+   0x0000000000401844 <submitr+152>:	mov    %rax,0x18(%r14)
+   0x0000000000401848 <submitr+156>:	movl   $0x656b636f,0x20(%r14)
+   0x0000000000401850 <submitr+164>:	movw   $0x74,0x24(%r14)
+   0x0000000000401857 <submitr+171>:	mov    $0xffffffff,%eax
+   0x000000000040185c <submitr+176>:	jmpq   0x401e68 <submitr+1724>
+   0x0000000000401861 <submitr+181>:	mov    %rbp,%rdi
+   0x0000000000401864 <submitr+184>:	callq  0x400ba0 <gethostbyname@plt>
+   0x0000000000401869 <submitr+189>:	test   %rax,%rax
+   0x000000000040186c <submitr+192>:	jne    0x4018d9 <submitr+301>
+   0x000000000040186e <submitr+194>:	movabs $0x44203a726f727245,%rax
+   0x0000000000401878 <submitr+204>:	mov    %rax,(%r14)
+   0x000000000040187b <submitr+207>:	movabs $0x6e7520736920534e,%rax
+   0x0000000000401885 <submitr+217>:	mov    %rax,0x8(%r14)
+   0x0000000000401889 <submitr+221>:	movabs $0x206f7420656c6261,%rax
+   0x0000000000401893 <submitr+231>:	mov    %rax,0x10(%r14)
+   0x0000000000401897 <submitr+235>:	movabs $0x2065766c6f736572,%rax
+   0x00000000004018a1 <submitr+245>:	mov    %rax,0x18(%r14)
+   0x00000000004018a5 <submitr+249>:	movabs $0x6120726576726573,%rax
+   0x00000000004018af <submitr+259>:	mov    %rax,0x20(%r14)
+   0x00000000004018b3 <submitr+263>:	movl   $0x65726464,0x28(%r14)
+   0x00000000004018bb <submitr+271>:	movw   $0x7373,0x2c(%r14)
+   0x00000000004018c2 <submitr+278>:	movb   $0x0,0x2e(%r14)
+   0x00000000004018c7 <submitr+283>:	mov    %r12d,%edi
+---Type <return> to continue, or q <return> to quit---
+   0x00000000004018ca <submitr+286>:	callq  0x400b50 <close@plt>
+   0x00000000004018cf <submitr+291>:	mov    $0xffffffff,%eax
+   0x00000000004018d4 <submitr+296>:	jmpq   0x401e68 <submitr+1724>
+   0x00000000004018d9 <submitr+301>:	movq   $0x0,0x30(%rsp)
+   0x00000000004018e2 <submitr+310>:	movq   $0x0,0x38(%rsp)
+   0x00000000004018eb <submitr+319>:	movw   $0x2,0x30(%rsp)
+   0x00000000004018f2 <submitr+326>:	movslq 0x14(%rax),%rdx
+   0x00000000004018f6 <submitr+330>:	mov    0x18(%rax),%rax
+   0x00000000004018fa <submitr+334>:	lea    0x34(%rsp),%rdi
+   0x00000000004018ff <submitr+339>:	mov    $0xc,%ecx
+   0x0000000000401904 <submitr+344>:	mov    (%rax),%rsi
+   0x0000000000401907 <submitr+347>:	callq  0x400bb0 <__memmove_chk@plt>
+   0x000000000040190c <submitr+352>:	ror    $0x8,%r13w
+   0x0000000000401911 <submitr+357>:	mov    %r13w,0x32(%rsp)
+   0x0000000000401917 <submitr+363>:	mov    $0x10,%edx
+   0x000000000040191c <submitr+368>:	lea    0x30(%rsp),%rsi
+   0x0000000000401921 <submitr+373>:	mov    %r12d,%edi
+   0x0000000000401924 <submitr+376>:	callq  0x400c30 <connect@plt>
+   0x0000000000401929 <submitr+381>:	test   %eax,%eax
+   0x000000000040192b <submitr+383>:	jns    0x40198a <submitr+478>
+   0x000000000040192d <submitr+385>:	movabs $0x55203a726f727245,%rax
+   0x0000000000401937 <submitr+395>:	mov    %rax,(%r14)
+   0x000000000040193a <submitr+398>:	movabs $0x6f7420656c62616e,%rax
+   0x0000000000401944 <submitr+408>:	mov    %rax,0x8(%r14)
+   0x0000000000401948 <submitr+412>:	movabs $0x7463656e6e6f6320,%rax
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401952 <submitr+422>:	mov    %rax,0x10(%r14)
+   0x0000000000401956 <submitr+426>:	movabs $0x20656874206f7420,%rax
+   0x0000000000401960 <submitr+436>:	mov    %rax,0x18(%r14)
+   0x0000000000401964 <submitr+440>:	movl   $0x76726573,0x20(%r14)
+   0x000000000040196c <submitr+448>:	movw   $0x7265,0x24(%r14)
+   0x0000000000401973 <submitr+455>:	movb   $0x0,0x26(%r14)
+   0x0000000000401978 <submitr+460>:	mov    %r12d,%edi
+   0x000000000040197b <submitr+463>:	callq  0x400b50 <close@plt>
+   0x0000000000401980 <submitr+468>:	mov    $0xffffffff,%eax
+   0x0000000000401985 <submitr+473>:	jmpq   0x401e68 <submitr+1724>
+   0x000000000040198a <submitr+478>:	mov    $0xffffffffffffffff,%rdx
+   0x0000000000401991 <submitr+485>:	mov    %rbx,%rdi
+   0x0000000000401994 <submitr+488>:	mov    $0x0,%eax
+   0x0000000000401999 <submitr+493>:	mov    %rdx,%rcx
+   0x000000000040199c <submitr+496>:	repnz scas %es:(%rdi),%al
+   0x000000000040199e <submitr+498>:	not    %rcx
+   0x00000000004019a1 <submitr+501>:	mov    %rcx,%rsi
+   0x00000000004019a4 <submitr+504>:	mov    0x10(%rsp),%rdi
+   0x00000000004019a9 <submitr+509>:	mov    %rdx,%rcx
+   0x00000000004019ac <submitr+512>:	repnz scas %es:(%rdi),%al
+   0x00000000004019ae <submitr+514>:	mov    %rcx,%r8
+   0x00000000004019b1 <submitr+517>:	mov    0x18(%rsp),%rdi
+   0x00000000004019b6 <submitr+522>:	mov    %rdx,%rcx
+   0x00000000004019b9 <submitr+525>:	repnz scas %es:(%rdi),%al
+   0x00000000004019bb <submitr+527>:	not    %rcx
+---Type <return> to continue, or q <return> to quit---
+   0x00000000004019be <submitr+530>:	mov    %rcx,%r9
+   0x00000000004019c1 <submitr+533>:	mov    %r15,%rdi
+   0x00000000004019c4 <submitr+536>:	mov    %rdx,%rcx
+   0x00000000004019c7 <submitr+539>:	repnz scas %es:(%rdi),%al
+   0x00000000004019c9 <submitr+541>:	sub    %r8,%r9
+   0x00000000004019cc <submitr+544>:	sub    %rcx,%r9
+   0x00000000004019cf <submitr+547>:	lea    -0x3(%rsi,%rsi,2),%rax
+   0x00000000004019d4 <submitr+552>:	lea    0x7b(%r9,%rax,1),%rax
+   0x00000000004019d9 <submitr+557>:	cmp    $0x2000,%rax
+   0x00000000004019df <submitr+563>:	jbe    0x401a54 <submitr+680>
+   0x00000000004019e1 <submitr+565>:	movabs $0x52203a726f727245,%rax
+   0x00000000004019eb <submitr+575>:	mov    %rax,(%r14)
+   0x00000000004019ee <submitr+578>:	movabs $0x747320746c757365,%rax
+   0x00000000004019f8 <submitr+588>:	mov    %rax,0x8(%r14)
+   0x00000000004019fc <submitr+592>:	movabs $0x6f6f7420676e6972,%rax
+   0x0000000000401a06 <submitr+602>:	mov    %rax,0x10(%r14)
+   0x0000000000401a0a <submitr+606>:	movabs $0x202e656772616c20,%rax
+   0x0000000000401a14 <submitr+616>:	mov    %rax,0x18(%r14)
+   0x0000000000401a18 <submitr+620>:	movabs $0x6573616572636e49,%rax
+   0x0000000000401a22 <submitr+630>:	mov    %rax,0x20(%r14)
+   0x0000000000401a26 <submitr+634>:	movabs $0x5254494d42555320,%rax
+   0x0000000000401a30 <submitr+644>:	mov    %rax,0x28(%r14)
+   0x0000000000401a34 <submitr+648>:	movabs $0x46554258414d5f,%rax
+   0x0000000000401a3e <submitr+658>:	mov    %rax,0x30(%r14)
+   0x0000000000401a42 <submitr+662>:	mov    %r12d,%edi
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401a45 <submitr+665>:	callq  0x400b50 <close@plt>
+   0x0000000000401a4a <submitr+670>:	mov    $0xffffffff,%eax
+   0x0000000000401a4f <submitr+675>:	jmpq   0x401e68 <submitr+1724>
+   0x0000000000401a54 <submitr+680>:	lea    0x2040(%rsp),%rdx
+   0x0000000000401a5c <submitr+688>:	mov    $0x400,%ecx
+   0x0000000000401a61 <submitr+693>:	mov    $0x0,%eax
+   0x0000000000401a66 <submitr+698>:	mov    %rdx,%rdi
+   0x0000000000401a69 <submitr+701>:	rep stos %rax,%es:(%rdi)
+   0x0000000000401a6c <submitr+704>:	mov    %rbx,%rdi
+   0x0000000000401a6f <submitr+707>:	mov    $0xffffffffffffffff,%rcx
+   0x0000000000401a76 <submitr+714>:	repnz scas %es:(%rdi),%al
+   0x0000000000401a78 <submitr+716>:	not    %rcx
+   0x0000000000401a7b <submitr+719>:	sub    $0x1,%rcx
+   0x0000000000401a7f <submitr+723>:	test   %ecx,%ecx
+   0x0000000000401a81 <submitr+725>:	je     0x401e84 <submitr+1752>
+   0x0000000000401a87 <submitr+731>:	sub    $0x1,%ecx
+   0x0000000000401a8a <submitr+734>:	lea    0x1(%rbx,%rcx,1),%r13
+   0x0000000000401a8f <submitr+739>:	mov    %rdx,%rbp
+   0x0000000000401a92 <submitr+742>:	movzbl (%rbx),%r8d
+   0x0000000000401a96 <submitr+746>:	cmp    $0x2a,%r8b
+   0x0000000000401a9a <submitr+750>:	je     0x401abf <submitr+787>
+   0x0000000000401a9c <submitr+752>:	lea    -0x2d(%r8),%eax
+   0x0000000000401aa0 <submitr+756>:	cmp    $0x1,%al
+   0x0000000000401aa2 <submitr+758>:	jbe    0x401abf <submitr+787>
+   0x0000000000401aa4 <submitr+760>:	cmp    $0x5f,%r8b
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401aa8 <submitr+764>:	je     0x401abf <submitr+787>
+   0x0000000000401aaa <submitr+766>:	lea    -0x30(%r8),%eax
+   0x0000000000401aae <submitr+770>:	cmp    $0x9,%al
+   0x0000000000401ab0 <submitr+772>:	jbe    0x401abf <submitr+787>
+   0x0000000000401ab2 <submitr+774>:	mov    %r8d,%eax
+   0x0000000000401ab5 <submitr+777>:	and    $0xffffffdf,%eax
+   0x0000000000401ab8 <submitr+780>:	sub    $0x41,%eax
+   0x0000000000401abb <submitr+783>:	cmp    $0x19,%al
+   0x0000000000401abd <submitr+785>:	ja     0x401ac9 <submitr+797>
+   0x0000000000401abf <submitr+787>:	lea    0x1(%rbp),%rax
+   0x0000000000401ac3 <submitr+791>:	mov    %r8b,0x0(%rbp)
+   0x0000000000401ac7 <submitr+795>:	jmp    0x401b35 <submitr+905>
+   0x0000000000401ac9 <submitr+797>:	cmp    $0x20,%r8b
+   0x0000000000401acd <submitr+801>:	jne    0x401ad9 <submitr+813>
+   0x0000000000401acf <submitr+803>:	lea    0x1(%rbp),%rax
+   0x0000000000401ad3 <submitr+807>:	movb   $0x2b,0x0(%rbp)
+   0x0000000000401ad7 <submitr+811>:	jmp    0x401b35 <submitr+905>
+   0x0000000000401ad9 <submitr+813>:	lea    -0x20(%r8),%eax
+   0x0000000000401add <submitr+817>:	cmp    $0x5f,%al
+   0x0000000000401adf <submitr+819>:	jbe    0x401aeb <submitr+831>
+   0x0000000000401ae1 <submitr+821>:	cmp    $0x9,%r8b
+   0x0000000000401ae5 <submitr+825>:	jne    0x401eed <submitr+1857>
+   0x0000000000401aeb <submitr+831>:	movzbl %r8b,%r8d
+   0x0000000000401aef <submitr+835>:	mov    $0x402748,%ecx
+   0x0000000000401af4 <submitr+840>:	mov    $0x8,%edx
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401af9 <submitr+845>:	mov    $0x1,%esi
+   0x0000000000401afe <submitr+850>:	lea    0x8040(%rsp),%rdi
+   0x0000000000401b06 <submitr+858>:	mov    $0x0,%eax
+   0x0000000000401b0b <submitr+863>:	callq  0x400c70 <__sprintf_chk@plt>
+   0x0000000000401b10 <submitr+868>:	movzbl 0x8040(%rsp),%eax
+   0x0000000000401b18 <submitr+876>:	mov    %al,0x0(%rbp)
+   0x0000000000401b1b <submitr+879>:	movzbl 0x8041(%rsp),%eax
+   0x0000000000401b23 <submitr+887>:	mov    %al,0x1(%rbp)
+   0x0000000000401b26 <submitr+890>:	lea    0x3(%rbp),%rax
+   0x0000000000401b2a <submitr+894>:	movzbl 0x8042(%rsp),%edx
+   0x0000000000401b32 <submitr+902>:	mov    %dl,0x2(%rbp)
+   0x0000000000401b35 <submitr+905>:	add    $0x1,%rbx
+   0x0000000000401b39 <submitr+909>:	cmp    %r13,%rbx
+   0x0000000000401b3c <submitr+912>:	je     0x401e84 <submitr+1752>
+   0x0000000000401b42 <submitr+918>:	mov    %rax,%rbp
+   0x0000000000401b45 <submitr+921>:	jmpq   0x401a92 <submitr+742>
+   0x0000000000401b4a <submitr+926>:	mov    %rbx,%rdx
+   0x0000000000401b4d <submitr+929>:	mov    %rbp,%rsi
+   0x0000000000401b50 <submitr+932>:	mov    %r12d,%edi
+   0x0000000000401b53 <submitr+935>:	callq  0x400b20 <write@plt>
+   0x0000000000401b58 <submitr+940>:	test   %rax,%rax
+   0x0000000000401b5b <submitr+943>:	jg     0x401b6c <submitr+960>
+   0x0000000000401b5d <submitr+945>:	callq  0x400af0 <__errno_location@plt>
+   0x0000000000401b62 <submitr+950>:	cmpl   $0x4,(%rax)
+   0x0000000000401b65 <submitr+953>:	jne    0x401b79 <submitr+973>
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401b67 <submitr+955>:	mov    $0x0,%eax
+   0x0000000000401b6c <submitr+960>:	add    %rax,%rbp
+   0x0000000000401b6f <submitr+963>:	sub    %rax,%rbx
+   0x0000000000401b72 <submitr+966>:	jne    0x401b4a <submitr+926>
+   0x0000000000401b74 <submitr+968>:	test   %r13,%r13
+   0x0000000000401b77 <submitr+971>:	jns    0x401bd8 <submitr+1068>
+   0x0000000000401b79 <submitr+973>:	movabs $0x43203a726f727245,%rax
+   0x0000000000401b83 <submitr+983>:	mov    %rax,(%r14)
+   0x0000000000401b86 <submitr+986>:	movabs $0x6e7520746e65696c,%rax
+   0x0000000000401b90 <submitr+996>:	mov    %rax,0x8(%r14)
+   0x0000000000401b94 <submitr+1000>:	movabs $0x206f7420656c6261,%rax
+   0x0000000000401b9e <submitr+1010>:	mov    %rax,0x10(%r14)
+   0x0000000000401ba2 <submitr+1014>:	movabs $0x6f74206574697277,%rax
+   0x0000000000401bac <submitr+1024>:	mov    %rax,0x18(%r14)
+   0x0000000000401bb0 <submitr+1028>:	movabs $0x7265732065687420,%rax
+   0x0000000000401bba <submitr+1038>:	mov    %rax,0x20(%r14)
+   0x0000000000401bbe <submitr+1042>:	movl   $0x726576,0x28(%r14)
+   0x0000000000401bc6 <submitr+1050>:	mov    %r12d,%edi
+   0x0000000000401bc9 <submitr+1053>:	callq  0x400b50 <close@plt>
+   0x0000000000401bce <submitr+1058>:	mov    $0xffffffff,%eax
+   0x0000000000401bd3 <submitr+1063>:	jmpq   0x401e68 <submitr+1724>
+   0x0000000000401bd8 <submitr+1068>:	mov    %r12d,0x8040(%rsp)
+   0x0000000000401be0 <submitr+1076>:	movl   $0x0,0x8044(%rsp)
+   0x0000000000401beb <submitr+1087>:	lea    0x8050(%rsp),%rax
+   0x0000000000401bf3 <submitr+1095>:	mov    %rax,0x8048(%rsp)
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401bfb <submitr+1103>:	mov    $0x2000,%edx
+   0x0000000000401c00 <submitr+1108>:	lea    0x40(%rsp),%rsi
+   0x0000000000401c05 <submitr+1113>:	lea    0x8040(%rsp),%rdi
+   0x0000000000401c0d <submitr+1121>:	callq  0x40168e <rio_readlineb>
+   0x0000000000401c12 <submitr+1126>:	test   %rax,%rax
+   0x0000000000401c15 <submitr+1129>:	jg     0x401c8b <submitr+1247>
+   0x0000000000401c17 <submitr+1131>:	movabs $0x43203a726f727245,%rax
+   0x0000000000401c21 <submitr+1141>:	mov    %rax,(%r14)
+   0x0000000000401c24 <submitr+1144>:	movabs $0x6e7520746e65696c,%rax
+   0x0000000000401c2e <submitr+1154>:	mov    %rax,0x8(%r14)
+   0x0000000000401c32 <submitr+1158>:	movabs $0x206f7420656c6261,%rax
+   0x0000000000401c3c <submitr+1168>:	mov    %rax,0x10(%r14)
+   0x0000000000401c40 <submitr+1172>:	movabs $0x7269662064616572,%rax
+   0x0000000000401c4a <submitr+1182>:	mov    %rax,0x18(%r14)
+   0x0000000000401c4e <submitr+1186>:	movabs $0x6564616568207473,%rax
+   0x0000000000401c58 <submitr+1196>:	mov    %rax,0x20(%r14)
+   0x0000000000401c5c <submitr+1200>:	movabs $0x73206d6f72662072,%rax
+   0x0000000000401c66 <submitr+1210>:	mov    %rax,0x28(%r14)
+   0x0000000000401c6a <submitr+1214>:	movl   $0x65767265,0x30(%r14)
+   0x0000000000401c72 <submitr+1222>:	movw   $0x72,0x34(%r14)
+   0x0000000000401c79 <submitr+1229>:	mov    %r12d,%edi
+   0x0000000000401c7c <submitr+1232>:	callq  0x400b50 <close@plt>
+   0x0000000000401c81 <submitr+1237>:	mov    $0xffffffff,%eax
+   0x0000000000401c86 <submitr+1242>:	jmpq   0x401e68 <submitr+1724>
+   0x0000000000401c8b <submitr+1247>:	lea    0x6040(%rsp),%r8
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401c93 <submitr+1255>:	lea    0x2c(%rsp),%rcx
+   0x0000000000401c98 <submitr+1260>:	lea    0x4040(%rsp),%rdx
+   0x0000000000401ca0 <submitr+1268>:	mov    $0x40274f,%esi
+   0x0000000000401ca5 <submitr+1273>:	lea    0x40(%rsp),%rdi
+   0x0000000000401caa <submitr+1278>:	mov    $0x0,%eax
+   0x0000000000401caf <submitr+1283>:	callq  0x400bf0 <__isoc99_sscanf@plt>
+   0x0000000000401cb4 <submitr+1288>:	mov    0x2c(%rsp),%r8d
+   0x0000000000401cb9 <submitr+1293>:	cmp    $0xc8,%r8d
+   0x0000000000401cc0 <submitr+1300>:	je     0x401d84 <submitr+1496>
+   0x0000000000401cc6 <submitr+1306>:	lea    0x6040(%rsp),%r9
+   0x0000000000401cce <submitr+1314>:	mov    $0x4026a0,%ecx
+   0x0000000000401cd3 <submitr+1319>:	mov    $0xffffffffffffffff,%rdx
+   0x0000000000401cda <submitr+1326>:	mov    $0x1,%esi
+   0x0000000000401cdf <submitr+1331>:	mov    %r14,%rdi
+   0x0000000000401ce2 <submitr+1334>:	mov    $0x0,%eax
+   0x0000000000401ce7 <submitr+1339>:	callq  0x400c70 <__sprintf_chk@plt>
+   0x0000000000401cec <submitr+1344>:	mov    %r12d,%edi
+   0x0000000000401cef <submitr+1347>:	callq  0x400b50 <close@plt>
+   0x0000000000401cf4 <submitr+1352>:	mov    $0xffffffff,%eax
+   0x0000000000401cf9 <submitr+1357>:	jmpq   0x401e68 <submitr+1724>
+   0x0000000000401cfe <submitr+1362>:	mov    $0x2000,%edx
+   0x0000000000401d03 <submitr+1367>:	lea    0x40(%rsp),%rsi
+   0x0000000000401d08 <submitr+1372>:	lea    0x8040(%rsp),%rdi
+   0x0000000000401d10 <submitr+1380>:	callq  0x40168e <rio_readlineb>
+   0x0000000000401d15 <submitr+1385>:	test   %rax,%rax
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401d18 <submitr+1388>:	jg     0x401d84 <submitr+1496>
+   0x0000000000401d1a <submitr+1390>:	movabs $0x43203a726f727245,%rax
+   0x0000000000401d24 <submitr+1400>:	mov    %rax,(%r14)
+   0x0000000000401d27 <submitr+1403>:	movabs $0x6e7520746e65696c,%rax
+   0x0000000000401d31 <submitr+1413>:	mov    %rax,0x8(%r14)
+   0x0000000000401d35 <submitr+1417>:	movabs $0x206f7420656c6261,%rax
+   0x0000000000401d3f <submitr+1427>:	mov    %rax,0x10(%r14)
+   0x0000000000401d43 <submitr+1431>:	movabs $0x6165682064616572,%rax
+   0x0000000000401d4d <submitr+1441>:	mov    %rax,0x18(%r14)
+   0x0000000000401d51 <submitr+1445>:	movabs $0x6f72662073726564,%rax
+   0x0000000000401d5b <submitr+1455>:	mov    %rax,0x20(%r14)
+   0x0000000000401d5f <submitr+1459>:	movabs $0x726576726573206d,%rax
+   0x0000000000401d69 <submitr+1469>:	mov    %rax,0x28(%r14)
+   0x0000000000401d6d <submitr+1473>:	movb   $0x0,0x30(%r14)
+   0x0000000000401d72 <submitr+1478>:	mov    %r12d,%edi
+   0x0000000000401d75 <submitr+1481>:	callq  0x400b50 <close@plt>
+   0x0000000000401d7a <submitr+1486>:	mov    $0xffffffff,%eax
+   0x0000000000401d7f <submitr+1491>:	jmpq   0x401e68 <submitr+1724>
+   0x0000000000401d84 <submitr+1496>:	cmpb   $0xd,0x40(%rsp)
+   0x0000000000401d89 <submitr+1501>:	jne    0x401cfe <submitr+1362>
+   0x0000000000401d8f <submitr+1507>:	cmpb   $0xa,0x41(%rsp)
+   0x0000000000401d94 <submitr+1512>:	jne    0x401cfe <submitr+1362>
+   0x0000000000401d9a <submitr+1518>:	cmpb   $0x0,0x42(%rsp)
+   0x0000000000401d9f <submitr+1523>:	jne    0x401cfe <submitr+1362>
+   0x0000000000401da5 <submitr+1529>:	mov    $0x2000,%edx
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401daa <submitr+1534>:	lea    0x40(%rsp),%rsi
+   0x0000000000401daf <submitr+1539>:	lea    0x8040(%rsp),%rdi
+   0x0000000000401db7 <submitr+1547>:	callq  0x40168e <rio_readlineb>
+   0x0000000000401dbc <submitr+1552>:	test   %rax,%rax
+   0x0000000000401dbf <submitr+1555>:	jg     0x401e31 <submitr+1669>
+   0x0000000000401dc1 <submitr+1557>:	movabs $0x43203a726f727245,%rax
+   0x0000000000401dcb <submitr+1567>:	mov    %rax,(%r14)
+   0x0000000000401dce <submitr+1570>:	movabs $0x6e7520746e65696c,%rax
+   0x0000000000401dd8 <submitr+1580>:	mov    %rax,0x8(%r14)
+   0x0000000000401ddc <submitr+1584>:	movabs $0x206f7420656c6261,%rax
+   0x0000000000401de6 <submitr+1594>:	mov    %rax,0x10(%r14)
+   0x0000000000401dea <submitr+1598>:	movabs $0x6174732064616572,%rax
+   0x0000000000401df4 <submitr+1608>:	mov    %rax,0x18(%r14)
+   0x0000000000401df8 <submitr+1612>:	movabs $0x7373656d20737574,%rax
+   0x0000000000401e02 <submitr+1622>:	mov    %rax,0x20(%r14)
+   0x0000000000401e06 <submitr+1626>:	movabs $0x6d6f726620656761,%rax
+   0x0000000000401e10 <submitr+1636>:	mov    %rax,0x28(%r14)
+   0x0000000000401e14 <submitr+1640>:	movabs $0x72657672657320,%rax
+   0x0000000000401e1e <submitr+1650>:	mov    %rax,0x30(%r14)
+   0x0000000000401e22 <submitr+1654>:	mov    %r12d,%edi
+   0x0000000000401e25 <submitr+1657>:	callq  0x400b50 <close@plt>
+   0x0000000000401e2a <submitr+1662>:	mov    $0xffffffff,%eax
+   0x0000000000401e2f <submitr+1667>:	jmp    0x401e68 <submitr+1724>
+   0x0000000000401e31 <submitr+1669>:	lea    0x40(%rsp),%rsi
+   0x0000000000401e36 <submitr+1674>:	mov    %r14,%rdi
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401e39 <submitr+1677>:	callq  0x400b00 <strcpy@plt>
+   0x0000000000401e3e <submitr+1682>:	mov    %r12d,%edi
+   0x0000000000401e41 <submitr+1685>:	callq  0x400b50 <close@plt>
+   0x0000000000401e46 <submitr+1690>:	movzbl (%r14),%eax
+   0x0000000000401e4a <submitr+1694>:	sub    $0x4f,%eax
+   0x0000000000401e4d <submitr+1697>:	jne    0x401e5e <submitr+1714>
+   0x0000000000401e4f <submitr+1699>:	movzbl 0x1(%r14),%eax
+   0x0000000000401e54 <submitr+1704>:	sub    $0x4b,%eax
+   0x0000000000401e57 <submitr+1707>:	jne    0x401e5e <submitr+1714>
+   0x0000000000401e59 <submitr+1709>:	movzbl 0x2(%r14),%eax
+   0x0000000000401e5e <submitr+1714>:	test   %eax,%eax
+   0x0000000000401e60 <submitr+1716>:	setne  %al
+   0x0000000000401e63 <submitr+1719>:	movzbl %al,%eax
+   0x0000000000401e66 <submitr+1722>:	neg    %eax
+   0x0000000000401e68 <submitr+1724>:	mov    0xa058(%rsp),%rdx
+   0x0000000000401e70 <submitr+1732>:	xor    %fs:0x28,%rdx
+   0x0000000000401e79 <submitr+1741>:	je     0x401f7f <submitr+2003>
+   0x0000000000401e7f <submitr+1747>:	jmpq   0x401f7a <submitr+1998>
+   0x0000000000401e84 <submitr+1752>:	lea    0x2040(%rsp),%rax
+   0x0000000000401e8c <submitr+1760>:	mov    %rax,0x8(%rsp)
+   0x0000000000401e91 <submitr+1765>:	mov    %r15,(%rsp)
+   0x0000000000401e95 <submitr+1769>:	mov    0x18(%rsp),%r9
+   0x0000000000401e9a <submitr+1774>:	mov    0x10(%rsp),%r8
+   0x0000000000401e9f <submitr+1779>:	mov    $0x4026d0,%ecx
+   0x0000000000401ea4 <submitr+1784>:	mov    $0x2000,%edx
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401ea9 <submitr+1789>:	mov    $0x1,%esi
+   0x0000000000401eae <submitr+1794>:	lea    0x40(%rsp),%rdi
+   0x0000000000401eb3 <submitr+1799>:	mov    $0x0,%eax
+   0x0000000000401eb8 <submitr+1804>:	callq  0x400c70 <__sprintf_chk@plt>
+   0x0000000000401ebd <submitr+1809>:	lea    0x40(%rsp),%rdi
+   0x0000000000401ec2 <submitr+1814>:	mov    $0x0,%eax
+   0x0000000000401ec7 <submitr+1819>:	mov    $0xffffffffffffffff,%rcx
+   0x0000000000401ece <submitr+1826>:	repnz scas %es:(%rdi),%al
+   0x0000000000401ed0 <submitr+1828>:	not    %rcx
+   0x0000000000401ed3 <submitr+1831>:	sub    $0x1,%rcx
+   0x0000000000401ed7 <submitr+1835>:	mov    %rcx,%r13
+   0x0000000000401eda <submitr+1838>:	je     0x401bd8 <submitr+1068>
+   0x0000000000401ee0 <submitr+1844>:	mov    %rcx,%rbx
+   0x0000000000401ee3 <submitr+1847>:	lea    0x40(%rsp),%rbp
+   0x0000000000401ee8 <submitr+1852>:	jmpq   0x401b4a <submitr+926>
+   0x0000000000401eed <submitr+1857>:	movabs $0x52203a726f727245,%rax
+   0x0000000000401ef7 <submitr+1867>:	mov    %rax,(%r14)
+   0x0000000000401efa <submitr+1870>:	movabs $0x747320746c757365,%rax
+   0x0000000000401f04 <submitr+1880>:	mov    %rax,0x8(%r14)
+   0x0000000000401f08 <submitr+1884>:	movabs $0x6e6f6320676e6972,%rax
+   0x0000000000401f12 <submitr+1894>:	mov    %rax,0x10(%r14)
+   0x0000000000401f16 <submitr+1898>:	movabs $0x6e6120736e696174,%rax
+   0x0000000000401f20 <submitr+1908>:	mov    %rax,0x18(%r14)
+   0x0000000000401f24 <submitr+1912>:	movabs $0x6c6167656c6c6920,%rax
+   0x0000000000401f2e <submitr+1922>:	mov    %rax,0x20(%r14)
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401f32 <submitr+1926>:	movabs $0x72706e7520726f20,%rax
+   0x0000000000401f3c <submitr+1936>:	mov    %rax,0x28(%r14)
+   0x0000000000401f40 <submitr+1940>:	movabs $0x20656c6261746e69,%rax
+   0x0000000000401f4a <submitr+1950>:	mov    %rax,0x30(%r14)
+   0x0000000000401f4e <submitr+1954>:	movabs $0x6574636172616863,%rax
+   0x0000000000401f58 <submitr+1964>:	mov    %rax,0x38(%r14)
+   0x0000000000401f5c <submitr+1968>:	movw   $0x2e72,0x40(%r14)
+   0x0000000000401f63 <submitr+1975>:	movb   $0x0,0x42(%r14)
+   0x0000000000401f68 <submitr+1980>:	mov    %r12d,%edi
+   0x0000000000401f6b <submitr+1983>:	callq  0x400b50 <close@plt>
+   0x0000000000401f70 <submitr+1988>:	mov    $0xffffffff,%eax
+   0x0000000000401f75 <submitr+1993>:	jmpq   0x401e68 <submitr+1724>
+   0x0000000000401f7a <submitr+1998>:	callq  0x400b30 <__stack_chk_fail@plt>
+   0x0000000000401f7f <submitr+2003>:	add    $0xa068,%rsp
+   0x0000000000401f86 <submitr+2010>:	pop    %rbx
+   0x0000000000401f87 <submitr+2011>:	pop    %rbp
+   0x0000000000401f88 <submitr+2012>:	pop    %r12
+   0x0000000000401f8a <submitr+2014>:	pop    %r13
+   0x0000000000401f8c <submitr+2016>:	pop    %r14
+   0x0000000000401f8e <submitr+2018>:	pop    %r15
+   0x0000000000401f90 <submitr+2020>:	retq   
+   0x0000000000401f91 <init_timeout+0>:	push   %rbx
+   0x0000000000401f92 <init_timeout+1>:	mov    %edi,%ebx
+   0x0000000000401f94 <init_timeout+3>:	test   %edi,%edi
+   0x0000000000401f96 <init_timeout+5>:	je     0x401fb6 <init_timeout+37>
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401f98 <init_timeout+7>:	mov    $0x401660,%esi
+   0x0000000000401f9d <init_timeout+12>:	mov    $0xe,%edi
+   0x0000000000401fa2 <init_timeout+17>:	callq  0x400b90 <signal@plt>
+   0x0000000000401fa7 <init_timeout+22>:	test   %ebx,%ebx
+   0x0000000000401fa9 <init_timeout+24>:	mov    $0x0,%edi
+   0x0000000000401fae <init_timeout+29>:	cmovns %ebx,%edi
+   0x0000000000401fb1 <init_timeout+32>:	callq  0x400b40 <alarm@plt>
+   0x0000000000401fb6 <init_timeout+37>:	pop    %rbx
+   0x0000000000401fb7 <init_timeout+38>:	retq   
+   0x0000000000401fb8 <init_driver+0>:	push   %rbp
+   0x0000000000401fb9 <init_driver+1>:	push   %rbx
+   0x0000000000401fba <init_driver+2>:	sub    $0x28,%rsp
+   0x0000000000401fbe <init_driver+6>:	mov    %rdi,%rbp
+   0x0000000000401fc1 <init_driver+9>:	mov    %fs:0x28,%rax
+   0x0000000000401fca <init_driver+18>:	mov    %rax,0x18(%rsp)
+   0x0000000000401fcf <init_driver+23>:	xor    %eax,%eax
+   0x0000000000401fd1 <init_driver+25>:	mov    $0x1,%esi
+   0x0000000000401fd6 <init_driver+30>:	mov    $0xd,%edi
+   0x0000000000401fdb <init_driver+35>:	callq  0x400b90 <signal@plt>
+   0x0000000000401fe0 <init_driver+40>:	mov    $0x1,%esi
+   0x0000000000401fe5 <init_driver+45>:	mov    $0x1d,%edi
+   0x0000000000401fea <init_driver+50>:	callq  0x400b90 <signal@plt>
+   0x0000000000401fef <init_driver+55>:	mov    $0x1,%esi
+   0x0000000000401ff4 <init_driver+60>:	mov    $0x1d,%edi
+   0x0000000000401ff9 <init_driver+65>:	callq  0x400b90 <signal@plt>
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000401ffe <init_driver+70>:	mov    $0x0,%edx
+   0x0000000000402003 <init_driver+75>:	mov    $0x1,%esi
+   0x0000000000402008 <init_driver+80>:	mov    $0x2,%edi
+   0x000000000040200d <init_driver+85>:	callq  0x400c80 <socket@plt>
+   0x0000000000402012 <init_driver+90>:	mov    %eax,%ebx
+   0x0000000000402014 <init_driver+92>:	test   %eax,%eax
+   0x0000000000402016 <init_driver+94>:	jns    0x402067 <init_driver+175>
+   0x0000000000402018 <init_driver+96>:	movabs $0x43203a726f727245,%rax
+   0x0000000000402022 <init_driver+106>:	mov    %rax,0x0(%rbp)
+   0x0000000000402026 <init_driver+110>:	movabs $0x6e7520746e65696c,%rax
+   0x0000000000402030 <init_driver+120>:	mov    %rax,0x8(%rbp)
+   0x0000000000402034 <init_driver+124>:	movabs $0x206f7420656c6261,%rax
+   0x000000000040203e <init_driver+134>:	mov    %rax,0x10(%rbp)
+   0x0000000000402042 <init_driver+138>:	movabs $0x7320657461657263,%rax
+   0x000000000040204c <init_driver+148>:	mov    %rax,0x18(%rbp)
+   0x0000000000402050 <init_driver+152>:	movl   $0x656b636f,0x20(%rbp)
+   0x0000000000402057 <init_driver+159>:	movw   $0x74,0x24(%rbp)
+   0x000000000040205d <init_driver+165>:	mov    $0xffffffff,%eax
+   0x0000000000402062 <init_driver+170>:	jmpq   0x402171 <init_driver+441>
+   0x0000000000402067 <init_driver+175>:	mov    $0x402760,%edi
+   0x000000000040206c <init_driver+180>:	callq  0x400ba0 <gethostbyname@plt>
+   0x0000000000402071 <init_driver+185>:	test   %rax,%rax
+   0x0000000000402074 <init_driver+188>:	jne    0x4020de <init_driver+294>
+   0x0000000000402076 <init_driver+190>:	movabs $0x44203a726f727245,%rax
+   0x0000000000402080 <init_driver+200>:	mov    %rax,0x0(%rbp)
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000402084 <init_driver+204>:	movabs $0x6e7520736920534e,%rax
+   0x000000000040208e <init_driver+214>:	mov    %rax,0x8(%rbp)
+   0x0000000000402092 <init_driver+218>:	movabs $0x206f7420656c6261,%rax
+   0x000000000040209c <init_driver+228>:	mov    %rax,0x10(%rbp)
+   0x00000000004020a0 <init_driver+232>:	movabs $0x2065766c6f736572,%rax
+   0x00000000004020aa <init_driver+242>:	mov    %rax,0x18(%rbp)
+   0x00000000004020ae <init_driver+246>:	movabs $0x6120726576726573,%rax
+   0x00000000004020b8 <init_driver+256>:	mov    %rax,0x20(%rbp)
+   0x00000000004020bc <init_driver+260>:	movl   $0x65726464,0x28(%rbp)
+   0x00000000004020c3 <init_driver+267>:	movw   $0x7373,0x2c(%rbp)
+   0x00000000004020c9 <init_driver+273>:	movb   $0x0,0x2e(%rbp)
+   0x00000000004020cd <init_driver+277>:	mov    %ebx,%edi
+   0x00000000004020cf <init_driver+279>:	callq  0x400b50 <close@plt>
+   0x00000000004020d4 <init_driver+284>:	mov    $0xffffffff,%eax
+   0x00000000004020d9 <init_driver+289>:	jmpq   0x402171 <init_driver+441>
+   0x00000000004020de <init_driver+294>:	movq   $0x0,(%rsp)
+   0x00000000004020e6 <init_driver+302>:	movq   $0x0,0x8(%rsp)
+   0x00000000004020ef <init_driver+311>:	movw   $0x2,(%rsp)
+   0x00000000004020f5 <init_driver+317>:	movslq 0x14(%rax),%rdx
+   0x00000000004020f9 <init_driver+321>:	mov    0x18(%rax),%rax
+   0x00000000004020fd <init_driver+325>:	lea    0x4(%rsp),%rdi
+   0x0000000000402102 <init_driver+330>:	mov    $0xc,%ecx
+   0x0000000000402107 <init_driver+335>:	mov    (%rax),%rsi
+   0x000000000040210a <init_driver+338>:	callq  0x400bb0 <__memmove_chk@plt>
+   0x000000000040210f <init_driver+343>:	movw   $0x6e3b,0x2(%rsp)
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000402116 <init_driver+350>:	mov    $0x10,%edx
+   0x000000000040211b <init_driver+355>:	mov    %rsp,%rsi
+   0x000000000040211e <init_driver+358>:	mov    %ebx,%edi
+   0x0000000000402120 <init_driver+360>:	callq  0x400c30 <connect@plt>
+   0x0000000000402125 <init_driver+365>:	test   %eax,%eax
+   0x0000000000402127 <init_driver+367>:	jns    0x40215b <init_driver+419>
+   0x0000000000402129 <init_driver+369>:	mov    $0x402760,%r8d
+   0x000000000040212f <init_driver+375>:	mov    $0x402720,%ecx
+   0x0000000000402134 <init_driver+380>:	mov    $0xffffffffffffffff,%rdx
+   0x000000000040213b <init_driver+387>:	mov    $0x1,%esi
+   0x0000000000402140 <init_driver+392>:	mov    %rbp,%rdi
+   0x0000000000402143 <init_driver+395>:	mov    $0x0,%eax
+   0x0000000000402148 <init_driver+400>:	callq  0x400c70 <__sprintf_chk@plt>
+   0x000000000040214d <init_driver+405>:	mov    %ebx,%edi
+   0x000000000040214f <init_driver+407>:	callq  0x400b50 <close@plt>
+   0x0000000000402154 <init_driver+412>:	mov    $0xffffffff,%eax
+   0x0000000000402159 <init_driver+417>:	jmp    0x402171 <init_driver+441>
+   0x000000000040215b <init_driver+419>:	mov    %ebx,%edi
+   0x000000000040215d <init_driver+421>:	callq  0x400b50 <close@plt>
+   0x0000000000402162 <init_driver+426>:	movw   $0x4b4f,0x0(%rbp)
+   0x0000000000402168 <init_driver+432>:	movb   $0x0,0x2(%rbp)
+   0x000000000040216c <init_driver+436>:	mov    $0x0,%eax
+   0x0000000000402171 <init_driver+441>:	mov    0x18(%rsp),%rcx
+   0x0000000000402176 <init_driver+446>:	xor    %fs:0x28,%rcx
+   0x000000000040217f <init_driver+455>:	je     0x402186 <init_driver+462>
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000402181 <init_driver+457>:	callq  0x400b30 <__stack_chk_fail@plt>
+   0x0000000000402186 <init_driver+462>:	add    $0x28,%rsp
+   0x000000000040218a <init_driver+466>:	pop    %rbx
+   0x000000000040218b <init_driver+467>:	pop    %rbp
+   0x000000000040218c <init_driver+468>:	retq   
+   0x000000000040218d <driver_post+0>:	push   %rbx
+   0x000000000040218e <driver_post+1>:	sub    $0x10,%rsp
+   0x0000000000402192 <driver_post+5>:	mov    %rcx,%rbx
+   0x0000000000402195 <driver_post+8>:	test   %edx,%edx
+   0x0000000000402197 <driver_post+10>:	je     0x4021c0 <driver_post+51>
+   0x0000000000402199 <driver_post+12>:	mov    %rsi,%rdx
+   0x000000000040219c <driver_post+15>:	mov    $0x402778,%esi
+   0x00000000004021a1 <driver_post+20>:	mov    $0x1,%edi
+   0x00000000004021a6 <driver_post+25>:	mov    $0x0,%eax
+   0x00000000004021ab <driver_post+30>:	callq  0x400c00 <__printf_chk@plt>
+   0x00000000004021b0 <driver_post+35>:	movw   $0x4b4f,(%rbx)
+   0x00000000004021b5 <driver_post+40>:	movb   $0x0,0x2(%rbx)
+   0x00000000004021b9 <driver_post+44>:	mov    $0x0,%eax
+   0x00000000004021be <driver_post+49>:	jmp    0x4021fe <driver_post+113>
+   0x00000000004021c0 <driver_post+51>:	test   %rdi,%rdi
+   0x00000000004021c3 <driver_post+54>:	je     0x4021f0 <driver_post+99>
+   0x00000000004021c5 <driver_post+56>:	cmpb   $0x0,(%rdi)
+   0x00000000004021c8 <driver_post+59>:	je     0x4021f0 <driver_post+99>
+   0x00000000004021ca <driver_post+61>:	mov    %rcx,(%rsp)
+   0x00000000004021ce <driver_post+65>:	mov    %rsi,%r9
+---Type <return> to continue, or q <return> to quit---
+   0x00000000004021d1 <driver_post+68>:	mov    $0x4022ec,%r8d
+   0x00000000004021d7 <driver_post+74>:	mov    %rdi,%rcx
+   0x00000000004021da <driver_post+77>:	mov    $0x40278f,%edx
+   0x00000000004021df <driver_post+82>:	mov    $0x3b6e,%esi
+   0x00000000004021e4 <driver_post+87>:	mov    $0x402760,%edi
+   0x00000000004021e9 <driver_post+92>:	callq  0x4017ac <submitr>
+   0x00000000004021ee <driver_post+97>:	jmp    0x4021fe <driver_post+113>
+   0x00000000004021f0 <driver_post+99>:	movw   $0x4b4f,(%rbx)
+   0x00000000004021f5 <driver_post+104>:	movb   $0x0,0x2(%rbx)
+   0x00000000004021f9 <driver_post+108>:	mov    $0x0,%eax
+   0x00000000004021fe <driver_post+113>:	add    $0x10,%rsp
+   0x0000000000402202 <driver_post+117>:	pop    %rbx
+   0x0000000000402203 <driver_post+118>:	retq   
+   0x0000000000402204:	nop
+   0x0000000000402205:	nop
+   0x0000000000402206:	nop
+   0x0000000000402207:	nop
+   0x0000000000402208:	nop
+   0x0000000000402209:	nop
+   0x000000000040220a:	nop
+   0x000000000040220b:	nop
+   0x000000000040220c:	nop
+   0x000000000040220d:	nop
+   0x000000000040220e:	nop
+   0x000000000040220f:	nop
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000402210 <__libc_csu_init+0>:	mov    %rbp,-0x28(%rsp)
+   0x0000000000402215 <__libc_csu_init+5>:	mov    %r12,-0x20(%rsp)
+   0x000000000040221a <__libc_csu_init+10>:	lea    0x200bdf(%rip),%rbp        # 0x602e00
+   0x0000000000402221 <__libc_csu_init+17>:	lea    0x200bd0(%rip),%r12        # 0x602df8
+   0x0000000000402228 <__libc_csu_init+24>:	mov    %r13,-0x18(%rsp)
+   0x000000000040222d <__libc_csu_init+29>:	mov    %r14,-0x10(%rsp)
+   0x0000000000402232 <__libc_csu_init+34>:	mov    %r15,-0x8(%rsp)
+   0x0000000000402237 <__libc_csu_init+39>:	mov    %rbx,-0x30(%rsp)
+   0x000000000040223c <__libc_csu_init+44>:	sub    $0x38,%rsp
+   0x0000000000402240 <__libc_csu_init+48>:	sub    %r12,%rbp
+   0x0000000000402243 <__libc_csu_init+51>:	mov    %edi,%r13d
+   0x0000000000402246 <__libc_csu_init+54>:	mov    %rsi,%r14
+   0x0000000000402249 <__libc_csu_init+57>:	sar    $0x3,%rbp
+   0x000000000040224d <__libc_csu_init+61>:	mov    %rdx,%r15
+   0x0000000000402250 <__libc_csu_init+64>:	callq  0x400ac0 <_init>
+   0x0000000000402255 <__libc_csu_init+69>:	test   %rbp,%rbp
+   0x0000000000402258 <__libc_csu_init+72>:	je     0x402276 <__libc_csu_init+102>
+   0x000000000040225a <__libc_csu_init+74>:	xor    %ebx,%ebx
+   0x000000000040225c <__libc_csu_init+76>:	nopl   0x0(%rax)
+   0x0000000000402260 <__libc_csu_init+80>:	mov    %r15,%rdx
+   0x0000000000402263 <__libc_csu_init+83>:	mov    %r14,%rsi
+   0x0000000000402266 <__libc_csu_init+86>:	mov    %r13d,%edi
+   0x0000000000402269 <__libc_csu_init+89>:	callq  *(%r12,%rbx,8)
+   0x000000000040226d <__libc_csu_init+93>:	add    $0x1,%rbx
+   0x0000000000402271 <__libc_csu_init+97>:	cmp    %rbp,%rbx
+---Type <return> to continue, or q <return> to quit---
+   0x0000000000402274 <__libc_csu_init+100>:	jne    0x402260 <__libc_csu_init+80>
+   0x0000000000402276 <__libc_csu_init+102>:	mov    0x8(%rsp),%rbx
+   0x000000000040227b <__libc_csu_init+107>:	mov    0x10(%rsp),%rbp
+   0x0000000000402280 <__libc_csu_init+112>:	mov    0x18(%rsp),%r12
+   0x0000000000402285 <__libc_csu_init+117>:	mov    0x20(%rsp),%r13
+   0x000000000040228a <__libc_csu_init+122>:	mov    0x28(%rsp),%r14
+   0x000000000040228f <__libc_csu_init+127>:	mov    0x30(%rsp),%r15
+   0x0000000000402294 <__libc_csu_init+132>:	add    $0x38,%rsp
+   0x0000000000402298 <__libc_csu_init+136>:	retq   
+   0x0000000000402299:	nopl   0x0(%rax)
+   0x00000000004022a0 <__libc_csu_fini+0>:	repz retq 
+   0x00000000004022a2:	nop
+   0x00000000004022a3:	nop
+   0x00000000004022a4 <_fini+0>:	sub    $0x8,%rsp
+   0x00000000004022a8 <_fini+4>:	add    $0x8,%rsp
+End of assembler dump.
