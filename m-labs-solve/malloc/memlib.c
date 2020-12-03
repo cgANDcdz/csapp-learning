@@ -21,17 +21,22 @@ static char *mem_max_addr;   /* largest legal heap address */
 
 /* 
  * mem_init - initialize the memory system model
- */
+ * 目的是不与已经存在的c内存分配器冲突; 
+ * => 通过malloc分配一块空间,这块空间看做自己的堆内存,用于进行自己的内存分配器实验(实际上是在模拟!!)
+ * mdriver.c中会先调用这个函数,自己的mm_init中不必操作此事
+ * /
+
 void mem_init(void)
 {
     /* allocate the storage we will use to model the available VM */
+    /*MAX_HEAP定义见config.h, 默认20MB*/
     if ((mem_start_brk = (char *)malloc(MAX_HEAP)) == NULL) {
-	fprintf(stderr, "mem_init_vm: malloc error\n");
-	exit(1);
+        fprintf(stderr, "mem_init_vm: malloc error\n");
+        exit(1);
     }
 
     mem_max_addr = mem_start_brk + MAX_HEAP;  /* max legal heap address */
-    mem_brk = mem_start_brk;                  /* heap is empty initially */
+    mem_brk = mem_start_brk;                  /* heap is empty initially, mem_brk指向自己已经分配内存的最高地址 */
 }
 
 /* 
@@ -60,9 +65,9 @@ void *mem_sbrk(int incr)
     char *old_brk = mem_brk;
 
     if ( (incr < 0) || ((mem_brk + incr) > mem_max_addr)) {
-	errno = ENOMEM;
-	fprintf(stderr, "ERROR: mem_sbrk failed. Ran out of memory...\n");
-	return (void *)-1;
+        errno = ENOMEM;
+        fprintf(stderr, "ERROR: mem_sbrk failed. Ran out of memory...\n");
+        return (void *)-1;
     }
     mem_brk += incr;
     return (void *)old_brk;

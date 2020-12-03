@@ -70,11 +70,11 @@ int mm_init(void)
         return -1;
     /* heap_listp 指向堆的第一个字节处*/
     /*初始化申请的4个字*/
-    PUT(heap_listp, 0);                          /* Alignment padding */
-    PUT(heap_listp + (1*WSIZE), PACK(DSIZE, 1)); /* Prologue header => 序言块 */ 
-    PUT(heap_listp + (2*WSIZE), PACK(DSIZE, 1)); /* Prologue footer */ 
-    PUT(heap_listp + (3*WSIZE), PACK(0, 1));     /* Epilogue header */
-    heap_listp += (2*WSIZE);                     //line:vm:mm:endinit  
+    PUT(heap_listp, 0);                          /* Alignment padding => 第一个写为0,仅满足双字对齐,不使用 */
+    PUT(heap_listp + (1*WSIZE), PACK(DSIZE, 1)); /* Prologue header => 第二个字作为序言块的头部 */ 
+    PUT(heap_listp + (2*WSIZE), PACK(DSIZE, 1)); /* Prologue footer => 第三个字作为序言块的脚部*/ 
+    PUT(heap_listp + (3*WSIZE), PACK(0, 1));     /* Epilogue header => 第四个字作为结尾块,大小为0,标记为1表示结尾 */
+    heap_listp += (2*WSIZE);            
     /* $end mminit */
 
 #ifdef NEXT_FIT
@@ -232,6 +232,7 @@ void mm_checkheap(int verbose)
 
 /* 
  * extend_heap - Extend heap with free block and return its block pointer
+ * 注意扩展的单位是字(为了方便双字对齐)
  */
 /* $begin mmextendheap */
 static void *extend_heap(size_t words) 
