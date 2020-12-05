@@ -15,6 +15,28 @@
 #include <sys/wait.h> // fir WEXITSTATUS
 #include <limits.h> // for INT_MAX
 
+/******************************************************************************
+ *                                  学习要点
+ * 1.signal(....) => main()
+ *      void (*signal(int sig, void (*func)(int)))(int) 设置一个函数来处理信号，即带有 sig 参数的信号处理程序
+ *      关于信号更多内容参考csapp8.5
+ * 
+ * 2.fflush() => 见sigsegv_handler()
+ *      fflush()会强迫将缓冲区内的数据写回参数stream 指定的文件中
+ *      fflush(stdout)刷新标准输出缓冲区,把输出缓冲区里的东西打印到标准输出设备上
+ * 
+ * 3.alarm(..) => main
+ *      alarm()可以在进程中设置一个定时器,当定时器指定的时间到时,它向进程发送SIGALRM信号
+ * 
+ * 4.system(string) => eval_perf()
+ *      system会调用fork产生子进程,由子进程来调用/bin/sh-c string来执行参数string字符串所代表的命令,
+ *      此命令执行完后随即返回原调用的进程
+ * 
+ * ****************************************************************************/
+
+
+
+
 /* Maximum array dimension */
 #define MAXN 256
 
@@ -52,6 +74,7 @@ void eval_perf(unsigned int s, unsigned int E, unsigned int b)
     char buf[1000], cmd[255];
     char filename[128];
 
+    /* 将实现的各类转置算法注册到函数数组func_list中 */
     registerFunctions(); 
 
     /* Open the complete trace file */
@@ -64,7 +87,10 @@ void eval_perf(unsigned int s, unsigned int E, unsigned int b)
         if (strcmp(func_list[i].description, SUBMIT_DESCRIPTION) == 0 )
             results.funcid = i; /* remember which function is the submission */
 
-
+        /*******************************************
+         *  1.使用valgrind生成数据
+         *      valgrind调用tracegen,tracegen内部调用注册的转置函数
+         * ****************************************/
         printf("\nFunction %d (%d total)\nStep 1: Validating and generating memory traces\n",i,func_counter);
         /* Use valgrind to generate the trace */
 
@@ -78,22 +104,24 @@ void eval_perf(unsigned int s, unsigned int E, unsigned int b)
         /* Get the start and end marker addresses */
         FILE* marker_fp = fopen(".marker", "r");
         assert(marker_fp);
-        fscanf(marker_fp, "%llx %llx", &marker_start, &marker_end);
+        fscanf(marker_fp, "%llx %llx", &marker_start, &marker_end);  //由tracegen.c生成
         fclose(marker_fp);
 
 
         func_list[i].correct=1;
-
         /* Save the correctness of the transpose submission */
         if (results.funcid == i ) {
             results.correct = 1;
         }
-
-        full_trace_fp = fopen("trace.tmp", "r");
+        
+        /* 里边是valgrind 生成的数据 */
+        full_trace_fp = fopen("trace.tmp", "r");   
         assert(full_trace_fp);
 
 
-        /* Filtered trace for each transpose function goes in a separate file */
+       
+        /*Filtered trace for each transpose function goes in a separate file */
+        /* 生成的临时文件,存放valgrind数据=> 就是将valgrind中生成的部分有用数据提取到特定转置函数对应的特定文件*/
         sprintf(filename, "trace.f%d", i);
         part_trace_fp = fopen(filename, "w");
         assert(part_trace_fp);
@@ -134,6 +162,10 @@ void eval_perf(unsigned int s, unsigned int E, unsigned int b)
         }
         fclose(full_trace_fp);
 
+
+        /*******************************************
+         *  2.使用生成的内存访问数据检测性能
+         * ****************************************/
         /* Run the reference simulator */
         printf("Step 2: Evaluating performance (s=%d, E=%d, b=%d)\n", s, E, b);
         char cmd[255];

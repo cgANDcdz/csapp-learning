@@ -23,6 +23,7 @@ extern int func_counter;
 extern void registerFunctions();
 
 /* Markers used to bound trace regions of interest */
+/* volatile的变量是说这变量可能会被意想不到地改变,这样,编译器就不会去假设这个变量的值了 */
 volatile char MARKER_START, MARKER_END;
 
 static int A[256][256];
@@ -77,6 +78,9 @@ int main(int argc, char* argv[]){
     initMatrix(M,N, A, B); 
 
     /* Record marker addresses */
+    /* 起始、终点地址写到文件中,用于告诉vargrind监测哪一部分的内存访问! 
+    *  => 不是检测这一地址范围内的数据,只是作为提取数据时的标记(详见test-trans.c)
+    * */
     FILE* marker_fp = fopen(".marker","w");
     assert(marker_fp);
     fprintf(marker_fp, "%llx %llx", 
