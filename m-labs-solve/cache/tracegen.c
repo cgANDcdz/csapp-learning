@@ -26,10 +26,13 @@ extern void registerFunctions();
 /* volatile的变量是说这变量可能会被意想不到地改变,这样,编译器就不会去假设这个变量的值了 */
 volatile char MARKER_START, MARKER_END;
 
+
 static int A[256][256];
+//static char icg[99];       // test by cdz => 会影响miss情况
 static int B[256][256];
 static int M;
 static int N;
+
 
 
 int validate(int fn,int M, int N, int A[N][M], int B[M][N]) {
@@ -103,8 +106,23 @@ int main(int argc, char* argv[]){
         MARKER_END = 34;
         if (!validate(selectedFunc,M,N,A,B))
             return selectedFunc+1;
-
     }
+
+
+    // 查看A B地址:add by cdz
+    // =>B与A相距262144=256x256x4,验证了A与B在内存中恰好挨在一起,
+    // 所以A[i][j]与B[i][j]一定映射到缓存中同一个位置
+    //printf("addr A:%p, addr B:%p\n",A,B); //addr A:0x602120, addr B:0x642120 
+
+    // printf("test set of B at transpose_submit:\n");
+    // for (int i = 0; i < N; i++) {
+    //     for (int j = 0; j < M; j++) {
+    //         printf("%p ",&B[i][j]);
+    //     }
+    //     printf("\n");
+    // }    
+
+    //printf("addr A:%p, addr B:%p, addr M:%p, addr N:%p, addr icg:%p\n",A,B,&M,&N,icg); //addr A:0x602120, addr B:0x642120 
     return 0;
 }
 

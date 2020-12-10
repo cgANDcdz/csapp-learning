@@ -88,7 +88,7 @@ void eval_perf(unsigned int s, unsigned int E, unsigned int b)
             results.funcid = i; /* remember which function is the submission */
 
         /*******************************************
-         *  1.使用valgrind生成数据
+         *  1.执行转置函数,使用valgrind生成数据
          *      valgrind调用tracegen,tracegen内部调用注册的转置函数
          * ****************************************/
         printf("\nFunction %d (%d total)\nStep 1: Validating and generating memory traces\n",i,func_counter);
